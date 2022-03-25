@@ -6,7 +6,17 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
       <header>
           <nav className='nav-bar'>
+            <div id='left-nav'>
               <li id='welcome'>Welcome, {user.name}</li>
+              <Link to='/mountains'>
+              <button >Mountains</button>
+              </Link>
+            </div>
+            <div>
+              <Link to="/">
+                <img src="../Logo test.PNG" alt="" />
+              </Link>
+            </div>
             <ul>
               <li><Link to="/profiles">Profiles</Link></li>
               <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>

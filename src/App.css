@@ -9,15 +9,21 @@
 }
 
 .nav-bar{
-  background-color: #43609b;
+  background-color: #ffffff;
   text-decoration: none;
   display:flex;
   justify-content: space-between;
-  color: aliceblue;
+  color: rgb(8, 8, 8);
   align-items: center;
-
   text-decoration: none;
   list-style-type: none;
+  box-shadow: 1px 1px 6px black;
+}
+
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-center{
@@ -48,11 +54,23 @@ ul{
   
 }
 
+#quote{
+  width: 50%;
+  border: 1px solid grey;
+  padding: 40px;
+  border-radius: 5px;
+  background-color: #c5eefa;
+}
+
 a{
   margin-right: 15px;
   height: 100%;
   text-decoration: none;
-  color: azure;
+  color: rgb(0, 0, 0);
+}
+#left-nav{
+  display: flex;
+  flex-direction: row;
 }
 
 .App-link {
