@@ -68,6 +68,10 @@ a{
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
+#left-nav{
+  display: flex;
+  flex-direction: row;
+}
 
 .App-link {
   color: #61dafb;
