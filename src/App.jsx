@@ -11,6 +11,7 @@ import MountainList from './pages/MountainList/MountainList'
 import ProfileDetails from './pages/Profile/Profile'
 import Mountain from './components/Mountain/Mountain'
 import * as mountainService from './services/mountainService'
+import MountainDetails from './pages/MountainDetails/MountainDetails'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -40,7 +41,7 @@ const App = () => {
         <Route path="/" element={<Landing user={user} />} />
         <Route path="/profiles/profile" element={<ProfileDetails user={user} />} />
         <Route path="/mountains" element={<MountainList mountains={mountains} />} />
-        <Route path="/mountain" element={<Mountain mountain={mountain} />} />
+        <Route path="/mountain" element={<MountainDetails/>} />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}

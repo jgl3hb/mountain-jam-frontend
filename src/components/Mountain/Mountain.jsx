@@ -1,15 +1,17 @@
 import userEvent from "@testing-library/user-event";
+import { Link } from "react-router-dom";
 
 
-const Mountain = (props) => {
-  
-  console.log("props", props)
+const Mountain = ({mountain}) => {
+
+  console.log("props", mountain)
   return (
     <>
-    <main>
-      <h1>Mountain Details</h1>
-      <p>This is Mountain {props.mountain.name} page</p>
-    </main>
+      <div key={mountain._id} className='each-card'>
+        <Link state={{mountain}} to="/mountain">
+          <p >{mountain.name}</p>
+        </Link>
+      </div>
     </>
   )
 }
