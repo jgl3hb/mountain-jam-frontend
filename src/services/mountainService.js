@@ -7,4 +7,6 @@ async function getAllMountains() {
   return await res.json()
 }
 
+
+
 export { getAllMountains }
