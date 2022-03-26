@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import * as mountainService from '../../services/mountainService'
+import { Link } from 'react-router-dom'
 
 const MountainList = () => {
   const [mountains, setMountains] = useState([])
@@ -18,7 +19,11 @@ const MountainList = () => {
       {mountains.length ? 
         <>
           {mountains.map(mountain=>
-            <p className='each-card' key={mountain._id}>{mountain.name}</p>
+        <div className='each-card'>
+          <Link to="/mountains/mountain">
+              <p  key={mountain._id}>{mountain.name}</p>
+          </Link>
+        </div>
             )}
         </>
         :

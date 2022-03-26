@@ -99,8 +99,9 @@ a:hover{
 
 .each-card{
   flex: 0 0 33.333333%;
-  max-width: 20%;
+  max-width: 15%;
   height: 200px;
+  margin-bottom: 3%;
   border: 1px solid black;
   background-image:url('https://picsum.photos/id/1018/320/200')
 }
