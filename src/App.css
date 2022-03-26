@@ -18,6 +18,7 @@
   text-decoration: none;
   list-style-type: none;
   box-shadow: 1px 1px 6px black;
+  font-size: 18px;
 }
 
 main{
@@ -37,8 +38,10 @@ main{
 }
 
 #welcome{
-  margin-left: 1%;
+  margin: 0 1vh 0 1vh;
 }
+
+
 header{
   
 }
@@ -69,6 +72,13 @@ a{
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
+
+a:hover{
+  text-shadow: 1px 1px 3px rgb(70, 182, 197);
+  color:rgb(0, 0, 0);
+}
+
+
 #left-nav{
   display: flex;
   flex-direction: row;
@@ -77,6 +87,26 @@ a{
 .App-link {
   color: #61dafb;
 }
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+
+}
+
+.each-card{
+  flex: 0 0 33.333333%;
+  max-width: 15%;
+  height: 200px;
+  margin-bottom: 3%;
+  border: 1px solid black;
+  background-image:url('https://picsum.photos/id/1018/320/200')
+}
+
+
 @media only screen and (max-width: 768px)  {
 
 }
