@@ -9,6 +9,10 @@
 }
 
 .nav-bar{
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
   background-color: #ffffff;
   text-decoration: none;
   display:flex;
