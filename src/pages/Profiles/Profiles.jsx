@@ -11,18 +11,20 @@ const Profiles = () => {
 
   return (
     <>
-    <div class='main-center'>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.length ? 
-        <>
-          {profiles.map(profile=>
-            <p key={profile._id}>{profile.name}</p>
-          )}
-        </>
-      :
-        <p>No profiles yet</p>
-      }
+    <main>
+      <div class='main-center'>
+        <h1>Hello. This is a list of all the profiles.</h1>
+        {profiles.length ? 
+          <>
+            {profiles.map(profile=>
+              <p key={profile._id}>{profile.name}</p>
+            )}
+          </>
+        :
+          <p>No profiles yet</p>
+        }
       </div>
+    </main>
     </>
   )
 }
