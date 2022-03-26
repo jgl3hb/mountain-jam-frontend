@@ -13,11 +13,6 @@ const shortArray = mountains.slice(0, 18)
         <>
           {shortArray.map(mountain=>
           <Mountain mountain={mountain}/>
-        // <div key={mountain._id} className='each-card'>
-        //   <Link to="/mountain">
-        //       <p  >{mountain.name}</p>
-        //   </Link>
-        // </div>
             )}
         </>
         :
