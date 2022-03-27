@@ -12,9 +12,11 @@ import ProfileDetails from './pages/Profile/Profile'
 import Mountain from './components/Mountain/Mountain'
 import * as mountainService from './services/mountainService'
 import MountainDetails from './pages/MountainDetails/MountainDetails'
+import MyProfile from './components/MyProfile/MyProfile'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [profile, setProfile] = useState({})
   const navigate = useNavigate()
   const [mountains, setMountains] = useState([])
 
@@ -30,6 +32,11 @@ const App = () => {
     navigate('/')
   }
 
+  function handleClick(profile) {
+    console.log("Testing Profile", profile)
+    setProfile(profile)
+  }
+
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
   }
@@ -39,7 +46,11 @@ const App = () => {
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
-        <Route path="/profile" element={<ProfileDetails user={user} />} />
+
+        <Route path="/profile" element={<ProfileDetails  profile={profile}/>} />
+
+        <Route path="/myprofile" element={<MyProfile user={user} />} />
+
         <Route path="/mountains" element={<MountainList mountains={mountains} />} />
         <Route path="/mountain" element={<MountainDetails/>} />
         <Route
@@ -52,7 +63,7 @@ const App = () => {
         />
         <Route
           path="/profiles"
-          element={user ? <Profiles /> : <Navigate to="/login" />}
+          element={user ? <Profiles handleClick={handleClick} /> : <Navigate to="/login" />}
         />
         <Route
           path="/changePassword"

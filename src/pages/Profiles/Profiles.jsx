@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 import { Link } from 'react-router-dom'
 
-const Profiles = () => {
+const Profiles = (props) => {
   const [profiles, setProfiles] = useState([])
 
   useEffect(()=> {
@@ -10,6 +10,16 @@ const Profiles = () => {
     .then(profiles => setProfiles(profiles))
   }, [])
 
+
+
+  let profIdx = profiles.map((profile,idx) =>{
+    return(
+
+    <p key={profile._id} onClick={()=> props.handleClick(profile)}>
+    <Link to="/profile">Hello! {profile.name}</Link></p>
+    )
+  }
+  )
   return (
     <>
     <main>
@@ -17,10 +27,7 @@ const Profiles = () => {
         <h1>Hello. This is a list of all the profiles.</h1>
         {profiles.length ? 
           <>
-            {profiles.map(profile=>
-              <p key={profile._id}>
-              <Link to="/profile">{profile.name}</Link></p>
-            )}
+          {profIdx}
           </>
         :
           <p>No profiles yet</p>
