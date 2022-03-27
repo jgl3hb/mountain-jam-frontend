@@ -13,6 +13,7 @@ import Mountain from './components/Mountain/Mountain'
 import * as mountainService from './services/mountainService'
 import MountainDetails from './pages/MountainDetails/MountainDetails'
 import MyProfile from './components/MyProfile/MyProfile'
+import AddMountain from './pages/AddMountain/AddMountain'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -52,6 +53,7 @@ const App = () => {
         <Route path="/myprofile" element={<MyProfile user={user} />} />
 
         <Route path="/mountains" element={<MountainList mountains={mountains} />} />
+        <Route path="/addmountain" element={<AddMountain  />} />
         <Route path="/mountain" element={<MountainDetails/>} />
         <Route
           path="/signup"
