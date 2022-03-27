@@ -82,6 +82,14 @@ function AddMountain(props) {
 						required
 					/>
         </div>
+        <br />
+					<button
+						type="submit"
+						className="add-mountain"
+            disabled={!validForm}
+					>
+						Add Mountain
+					</button>
         </form>
 
       </main>
