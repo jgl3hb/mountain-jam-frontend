@@ -6,7 +6,7 @@ function AddMountain(props) {
   const [formData, setFormData] = useState({
     name: '',
     elevation: 0,
-    country: [],
+    countries: [],
   })
 
   useEffect(()=> {
@@ -24,7 +24,7 @@ function AddMountain(props) {
 		// mountainFormData.append('photo', formData.photo)
     mountainFormData.append('name', formData.name)
     mountainFormData.append('elevation', formData.elevation)
-    mountainFormData.append('country', formData.country)
+    mountainFormData.append('countries', formData.countries)
     props.handleAddMountain(mountainFormData)
   }
 
@@ -69,15 +69,15 @@ function AddMountain(props) {
         </div>
         <br />
         <div>
-        <label htmlFor="country-input">
+        <label htmlFor="countries-input">
 						Country (required)
 				</label>
         <br />
         <input 
 						type="text"
-						id="country-input"
-						name="country"
-            value={formData.country}
+						id="countries-input"
+						name="countries"
+            value={formData.countries}
             onChange={handleChange}
 						required
 					/>

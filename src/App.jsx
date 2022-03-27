@@ -25,6 +25,13 @@ const App = () => {
     mountainService.getAllMountains()
     .then(mountains => setMountains(mountains))
   }, [])
+
+  const handleAddMountain = async newMountainData => {
+    const newMountain = await mountainService.create(newMountainData)
+    setMountains([...mountains, newMountain])
+    console.log('new mountain', newMountain)
+    navigate('/mountains')
+  }
   
 
   const handleLogout = () => {
@@ -34,7 +41,6 @@ const App = () => {
   }
 
   function handleClick(profile) {
-    console.log("Testing Profile", profile)
     setProfile(profile)
   }
 
@@ -53,8 +59,11 @@ const App = () => {
         <Route path="/myprofile" element={<MyProfile user={user} />} />
 
         <Route path="/mountains" element={<MountainList mountains={mountains} />} />
-        <Route path="/addmountain" element={<AddMountain  />} />
+
+        <Route path="/addmountain" element={<AddMountain handleAddMountain={handleAddMountain} />} />
+
         <Route path="/mountain" element={<MountainDetails/>} />
+        
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
