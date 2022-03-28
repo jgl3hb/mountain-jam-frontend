@@ -20,7 +20,30 @@ async function getAllMountains() {
   return await res.json()
 }
 
+function deleteMountain(id) {
+  return fetch(`${BASE_URL}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+  })
+  .then(res => res.json())
+}
+
+function update(mountain) {
+  return fetch(`${BASE_URL}/${mountain.get('_id')}`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+    body: mountain
+  })
+  .then(res => res.json())
+}
+
 export { 
   create,
-  getAllMountains 
+  getAllMountains,
+  deleteMountain,
+  update,
 }
