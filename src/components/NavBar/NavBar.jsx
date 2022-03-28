@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, profile, handleLogout, handleClick }) => {
   return (
     <>
       {user ?
@@ -17,7 +17,7 @@ const NavBar = ({ user, handleLogout }) => {
               </Link>
             </div>
             <ul>
-              <li><Link to="/myprofile">My Profile</Link></li>
+              <li onClick={()=> handleClick(profile, user)}><Link to="/myprofile" profile={profile} user={user}>My Profile</Link></li>
               <li><Link to="/profiles">Profiles</Link></li>
               <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
               <li><Link to="/changePassword">Change Password</Link></li>

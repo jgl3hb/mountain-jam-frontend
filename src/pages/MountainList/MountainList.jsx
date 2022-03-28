@@ -6,6 +6,7 @@ import MountainDetails from '../MountainDetails/MountainDetails'
 const MountainList = (props) => {
 const mountains = props.mountains  
 const shortArray = mountains.slice(mountains.length - 18, mountains.length)
+
     return (
       <>
       <main>
