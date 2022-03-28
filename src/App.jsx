@@ -11,6 +11,7 @@ import MountainList from './pages/MountainList/MountainList'
 import ProfileDetails from './pages/Profile/Profile'
 import Mountain from './components/Mountain/Mountain'
 import * as mountainService from './services/mountainService'
+import * as profileService from './services/profileService'
 import MountainDetails from './pages/MountainDetails/MountainDetails'
 import MyProfile from './components/MyProfile/MyProfile'
 import AddMountain from './pages/AddMountain/AddMountain'
@@ -20,16 +21,28 @@ const App = () => {
   const [profile, setProfile] = useState({})
   const navigate = useNavigate()
   const [mountains, setMountains] = useState([])
+  const [userProfile, setUserProfile] = useState(null)
 
   useEffect(()=> {
     mountainService.getAllMountains()
     .then(mountains => setMountains(mountains))
   }, [])
 
+  useEffect(()=> {
+    profileService.getAllProfiles()
+    .then(profiles=> {
+        let myProfile = profiles.filter(profile => profile._id.includes(user.profile))
+        setUserProfile(myProfile)
+    }) 
+  }, [])
+
+  useEffect(()=> {
+    console.log('myprofile', userProfile)
+  },[userProfile])
+
   const handleAddMountain = async newMountainData => {
     const newMountain = await mountainService.create(newMountainData)
     setMountains([...mountains, newMountain])
-    console.log('new mountain', newMountain)
     navigate('/mountains')
   }
   
@@ -48,10 +61,6 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const myProfile = (profiles, user) => {
-    profiles.filter(profile => profile._id.includes(user.profile))
-  }
-
   return (
     <>
       <NavBar user={user} handleClick={handleClick} profile={profile} handleLogout={handleLogout} />
@@ -60,7 +69,7 @@ const App = () => {
 
         <Route path="/profile" element={<ProfileDetails  user={user} profile={profile}/>} />
 
-        <Route path="/myprofile" myProfile={myProfile} element={<MyProfile user={user} profile={profile} />} />
+        <Route path="/myprofile" element={<ProfileDetails user={user} userProfile={userProfile} profile={profile} />} />
 
         <Route path="/mountains" element={<MountainList mountains={mountains} />} />
 
