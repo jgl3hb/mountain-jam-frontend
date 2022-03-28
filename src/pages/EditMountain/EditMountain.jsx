@@ -32,12 +32,14 @@ function EditMountain(props) {
 
   return (
     <>
+		<main>
       <h1>Edit Mountain</h1>
 			<form autoComplete="off" ref={formElement} onSubmit={handleSubmit}>
 				<div className="form-group mb-3">
 					<label htmlFor="name-input" className="form-label">
 						Mountain's Name (required)
 					</label>
+					<br />
 					<input 
 						type="text"
 						className="form-control"
@@ -46,12 +48,14 @@ function EditMountain(props) {
             value={formData.name}
             onChange={handleChange}
 						required
-					/>
+						/>
 				</div>
     	  <div className="form-group mb-3">
+					<br />
 					<label htmlFor="countries-input" className="form-label">
 						Mountain's Country (required)
 					</label>
+					<br />
 					<input 
 						type="text"
 						className="form-control"
@@ -60,12 +64,14 @@ function EditMountain(props) {
             value={formData.countries}
             onChange={handleChange}
 						required
-					/>
+						/>
 				</div>
 				<div className="form-group mb-4">
+					<br />
 					<label htmlFor="elevation-input" className="form-label">
 						Mountain's Elevation
 					</label>
+					<br />
 					<input 
 						type="number"
 						className="form-control"
@@ -73,26 +79,29 @@ function EditMountain(props) {
 						name="elevation"
             value={formData.elevation}
             onChange={handleChange}
-					/>
+						/>
 				</div>
 				<div className="form-group mb-4">
+					<br />
 					<label htmlFor="photo-upload" className="form-label">
 						Upload Photo
 					</label>
+					<br />
 					<input
 						type="file"
 						className="form-control"
 						id="photo-upload"
 						name="photo"
 						onChange={handleChangePhoto}
-					/>
+						/>
 				</div>
 				<div className="d-grid mb-3">
+					<br />
 					<button
 						type="submit"
 						className="btn btn-primary btn-fluid"
             disabled={!validForm}
-					>
+						>
 						Save Mountain
 					</button>
 				</div>
@@ -100,11 +109,12 @@ function EditMountain(props) {
 					<Link
 						to="/"
 						className="btn btn-danger btn-fluid"
-					>
+						>
 						Cancel
 					</Link>
 				</div>
 			</form>
+		</main>
     </>
   )
 }
