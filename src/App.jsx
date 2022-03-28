@@ -34,6 +34,11 @@ const App = () => {
     navigate('/mountains')
   }
 
+  const handleDeleteMountain = id => {
+    mountainService.deleteMountain(id)
+    .then(deletedMountain => setMountains(mountains.filter(mountain => mountain._id !== deletedMountain._id)))
+  }
+
   const handleUpdateMountain = updatedMountainData => {
     mountainService.update(updatedMountainData)
     .then(updatedMountain => {
@@ -70,6 +75,20 @@ const App = () => {
         <Route path="/mountains" element={<MountainList mountains={mountains} />} />
 
         <Route path="/addmountain" element={<AddMountain handleAddMountain={handleAddMountain} />} />
+
+        <Route
+            path='/'
+            element={
+              user ?
+              <MountainList
+                handleDeleteMountain={handleDeleteMountain}
+                mountains={mountains}
+                user={user} 
+              />
+              :
+              <Navigate to='/login' />
+            }
+          />
 
         <Route path="/editmountain" element={<EditMountain handleUpdateMountain={handleUpdateMountain} />} />
 
