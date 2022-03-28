@@ -48,7 +48,7 @@ function EditMountain(props) {
 						required
 					/>
 				</div>
-    		<div className="form-group mb-3">
+    	  <div className="form-group mb-3">
 					<label htmlFor="countries-input" className="form-label">
 						Mountain's Country (required)
 					</label>

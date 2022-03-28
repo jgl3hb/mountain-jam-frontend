@@ -1,5 +1,6 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import MountainList from "../MountainList/MountainList";
+
 
 const MountainDetails = () => {
   const location = useLocation()
@@ -15,9 +16,22 @@ const MountainDetails = () => {
         <br />
         Elevation of this mountain is {mountain.elevation} meters. It's part of {mountain.range} range.
         </div>
+        <Link
+          to='/editmountain'
+        >
+          <br />
+          <button>
+            Edit Mountain
+          </button>
+        </Link>
     </main>
     </>
   )
 }
+
+
+
+
+
 
 export default MountainDetails;
