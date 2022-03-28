@@ -3,7 +3,7 @@ import Mountain from '../../components/Mountain/Mountain'
 import { Link } from 'react-router-dom'
 
 const MountainList = ({mountains}) => {
-const shortArray = mountains.slice(0, 18)
+const shortArray = mountains.slice(mountains.length -18, mountains.length)
     return (
       <>
       <main>
