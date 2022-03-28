@@ -54,7 +54,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
 
-        <Route path="/profile" element={<ProfileDetails  profile={profile}/>} />
+        <Route path="/profile" element={<ProfileDetails  user={user} profile={profile}/>} />
 
         <Route path="/myprofile" element={<MyProfile user={user} />} />
 
