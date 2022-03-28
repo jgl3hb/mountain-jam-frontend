@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import MyProfile from "../../components/MyProfile/MyProfile";
 
 const ProfileDetails = (props) => {
-  console.log('profile',props.profile._id)
+  console.log('profile', props.profile._id)
   console.log('user',props.user.profile)
   return (
     <>
