@@ -48,15 +48,19 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  const myProfile = (profiles, user) => {
+    profiles.filter(profile => profile._id.includes(user.profile))
+  }
+
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar user={user} handleClick={handleClick} profile={profile} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
 
         <Route path="/profile" element={<ProfileDetails  user={user} profile={profile}/>} />
 
-        <Route path="/myprofile" element={<MyProfile user={user} />} />
+        <Route path="/myprofile" myProfile={myProfile} element={<MyProfile user={user} profile={profile} />} />
 
         <Route path="/mountains" element={<MountainList mountains={mountains} />} />
 
