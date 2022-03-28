@@ -35,6 +35,7 @@ const App = () => {
   }
 
   const handleDeleteMountain = id => {
+    console.log('is this working?')
     mountainService.deleteMountain(id)
     .then(deletedMountain => setMountains(mountains.filter(mountain => mountain._id !== deletedMountain._id)))
   }
@@ -64,7 +65,9 @@ const App = () => {
 
   return (
     <>
+
       <NavBar user={user} handleLogout={handleLogout} />
+
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
 
@@ -76,9 +79,8 @@ const App = () => {
 
         <Route path="/addmountain" element={<AddMountain handleAddMountain={handleAddMountain} />} />
 
-        <Route
-            path='/'
-            element={
+        <Route path='/mountains'
+            element={ 
               user ?
               <MountainList
                 handleDeleteMountain={handleDeleteMountain}
@@ -92,7 +94,8 @@ const App = () => {
 
         <Route path="/editmountain" element={<EditMountain handleUpdateMountain={handleUpdateMountain} />} />
 
-        <Route path="/mountain" element={<MountainDetails/>} />
+        <Route path="/mountain" element={<MountainDetails
+        handleDeleteMountain={handleDeleteMountain}/>} />
         
         <Route
           path="/signup"

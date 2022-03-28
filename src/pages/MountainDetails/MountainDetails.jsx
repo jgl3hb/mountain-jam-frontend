@@ -2,8 +2,10 @@ import { useLocation, Link } from "react-router-dom";
 import MountainList from "../MountainList/MountainList";
 
 
-const MountainDetails = () => {
+
+const MountainDetails = (props) => {
   const location = useLocation()
+  // const handleDeleteMountain = props.handleDeleteMountain
   // console.log("location", location.state);
   const mountain = location.state.mountain
 
@@ -25,14 +27,20 @@ const MountainDetails = () => {
             Edit Mountain
           </button>
         </Link>
+        <Link
+          to='/mountains'
+          state={{mountain}}
+        >
+          <br />
+          <button
+            onClick={()=> props.handleDeleteMountain(mountain._id)}>
+              Delete Mountain
+          </button>
+        </Link>
     </main>
     </>
   )
 }
-
-
-
-
 
 
 export default MountainDetails;
