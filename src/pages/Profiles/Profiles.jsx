@@ -14,7 +14,6 @@ const Profiles = (props) => {
 
   let profIdx = profiles.map((profile,idx) =>{
     return(
-
     <p key={profile._id} onClick={()=> props.handleClick(profile)}>
     <Link to="/profile">Hello! {profile.name}</Link></p>
     )
