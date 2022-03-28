@@ -18,6 +18,7 @@ const MountainDetails = () => {
         </div>
         <Link
           to='/editmountain'
+          state={{mountain}}
         >
           <br />
           <button>

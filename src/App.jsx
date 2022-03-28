@@ -14,6 +14,7 @@ import * as mountainService from './services/mountainService'
 import MountainDetails from './pages/MountainDetails/MountainDetails'
 import MyProfile from './components/MyProfile/MyProfile'
 import AddMountain from './pages/AddMountain/AddMountain'
+import EditMountain from './pages/EditMountain/EditMountain'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -32,8 +33,16 @@ const App = () => {
     console.log('new mountain', newMountain)
     navigate('/mountains')
   }
-  
 
+  const handleUpdateMountain = updatedMountainData => {
+    mountainService.update(updatedMountainData)
+    .then(updatedMountain => {
+      const newMountainsArray = mountains.map(mountain => mountain._id === updatedMountain._id ? updatedMountain : mountain)
+      setMountains(newMountainsArray)
+      navigate('/mountains')
+    })
+  }
+  
   const handleLogout = () => {
     authService.logout()
     setUser(null)
@@ -61,6 +70,8 @@ const App = () => {
         <Route path="/mountains" element={<MountainList mountains={mountains} />} />
 
         <Route path="/addmountain" element={<AddMountain handleAddMountain={handleAddMountain} />} />
+
+        <Route path="/editmountain" element={<EditMountain handleUpdateMountain={handleUpdateMountain} />} />
 
         <Route path="/mountain" element={<MountainDetails/>} />
         
