@@ -1,9 +1,12 @@
 // import { useState, useEffect } from 'react'
 import Mountain from '../../components/Mountain/Mountain'
 import { Link } from 'react-router-dom'
+import MountainDetails from '../MountainDetails/MountainDetails'
 
-const MountainList = ({mountains}) => {
-const shortArray = mountains.slice(mountains.length -18, mountains.length)
+const MountainList = (props) => {
+const mountains = props.mountains  
+const shortArray = mountains.slice(mountains.length - 18, mountains.length)
+
     return (
       <>
       <main>
@@ -12,8 +15,11 @@ const shortArray = mountains.slice(mountains.length -18, mountains.length)
       {mountains.length ? 
         <>
           {shortArray.map(mountain=>
-          <Mountain mountain={mountain}/>
+          <Mountain mountain={mountain}
+          handleDeleteMountain={props.handleDeleteMountain}
+          user={props.user}/>
             )}
+        
         </>
         :
         <p>No mountains yet</p>
