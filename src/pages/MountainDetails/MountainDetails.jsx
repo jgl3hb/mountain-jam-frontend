@@ -1,5 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import MountainList from "../MountainList/MountainList";
+import CreateComment from "../../components/Comment/Comment";
 
 
 
@@ -24,6 +25,7 @@ const MountainDetails = (props) => {
         <p></p>
         }
         </div>
+        <CreateComment />
         <Link
           to='/editmountain'
           state={{mountain}}
