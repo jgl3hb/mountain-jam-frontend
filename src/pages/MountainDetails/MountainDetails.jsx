@@ -17,7 +17,7 @@ const MountainDetails = (props) => {
         {mountain.countries.length > 1? mountain.countries.filter((country, index) => index>0).map(country => <p>It's also located in {country} </p>)
         :
         <></>}
-        <p>Elevation of this mountain is {mountain.elevation} meters</p> 
+        <p>Elevation of this mountain is {mountain.elevation} meters / {Math.round(mountain.elevation*3.28)} feet</p> 
         {mountain.range? 
         <p>It's part of the {mountain.range} range</p>
         :
