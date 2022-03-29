@@ -1,11 +1,13 @@
 import { useLocation, Link } from "react-router-dom";
 import MountainList from "../MountainList/MountainList";
+import CreateComment from "../../components/Comment/Comment";
 
 
 
 const MountainDetails = (props) => {
   const location = useLocation()
   const mountain = location.state.mountain
+  console.log('props', props)
 
   return(
     <>
@@ -19,11 +21,15 @@ const MountainDetails = (props) => {
         <></>}
         <p>Elevation of this mountain is {mountain.elevation} meters / {Math.round(mountain.elevation*3.28)} feet</p> 
         {mountain.range? 
-        <p>It's part of the {mountain.range} range</p>
+        <>
+          <p>It's part of the {mountain.range} range</p>
+          <p>Comment{mountain.comments}</p>
+        </>
         :
         <p></p>
         }
         </div>
+        <CreateComment handleCreateComment={props.handleCreateComment} mountain={mountain}/>
         <Link
           to='/editmountain'
           state={{mountain}}

@@ -15,7 +15,9 @@ const shortArray = mountains.slice(0, 18)
       {mountains.length ? 
         <>
           {shortArray.map(mountain=>
-          <Mountain mountain={mountain}
+          <Mountain 
+          key={mountain._id}
+          mountain={mountain}
           handleDeleteMountain={props.handleDeleteMountain}
           user={props.user}/>
             )}

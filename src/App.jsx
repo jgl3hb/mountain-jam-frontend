@@ -47,6 +47,11 @@ const App = () => {
     navigate('/mountains')
   }
 
+  const handleCreateComment = async (mountain, newCommentData) => {
+    console.log('commentData', newCommentData.comment)
+    const newComment = await mountainService.createComment(mountain, newCommentData)
+  }
+
   const handleDeleteMountain = id => {
     console.log('is this working?')
     mountainService.deleteMountain(id)
@@ -108,7 +113,7 @@ const App = () => {
         <Route path="/editmountain" element={<EditMountain handleUpdateMountain={handleUpdateMountain} />} />
 
         <Route path="/mountain" element={<MountainDetails
-        handleDeleteMountain={handleDeleteMountain}/>} />
+        handleDeleteMountain={handleDeleteMountain} handleCreateComment={handleCreateComment} />} />
         
         <Route
           path="/signup"

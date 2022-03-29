@@ -4,7 +4,6 @@ const BASE_URL = `${process.env.REACT_APP_BACKEND_SERVER_URL}/api/mountains`
 
 
 function create(mountain) {
-  console.log('mountain', mountain)
   return fetch(BASE_URL, {
     method: 'POST',
     headers: {
@@ -41,9 +40,24 @@ function update(mountain) {
   .then(res => res.json())
 }
 
+function createComment(mountain, comment) {
+  for(let pair of comment.entries()){
+    console.log(pair[0], pair[1])
+  }
+  return fetch(`${BASE_URL}/${mountain._id}/comment`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+    body: comment
+  })
+  .then(res => res.json())
+}
+
 export { 
   create,
   getAllMountains,
   deleteMountain,
   update,
+  createComment,
 }
