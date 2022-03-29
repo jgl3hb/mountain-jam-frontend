@@ -5,8 +5,6 @@ import MountainList from "../MountainList/MountainList";
 
 const MountainDetails = (props) => {
   const location = useLocation()
-  // const handleDeleteMountain = props.handleDeleteMountain
-  // console.log("location", location.state);
   const mountain = location.state.mountain
 
   return(
@@ -14,9 +12,17 @@ const MountainDetails = (props) => {
     <main>
       <h1>Mountain details</h1>
       <div className="mountain-dets">
-        This is mountain {mountain.name}.
-        <br />
-        Elevation of this mountain is {mountain.elevation} meters. It's part of {mountain.range} range.
+        <p>This is {mountain.name}</p>
+        <p>It's located in {mountain.countries[0]} </p>
+        {mountain.countries.length > 1? mountain.countries.filter((country, index) => index>0).map(country => <p>It's also located in {country} </p>)
+        :
+        <></>}
+        <p>Elevation of this mountain is {mountain.elevation} meters / {Math.round(mountain.elevation*3.28)} feet</p> 
+        {mountain.range? 
+        <p>It's part of the {mountain.range} range</p>
+        :
+        <p></p>
+        }
         </div>
         <Link
           to='/editmountain'
