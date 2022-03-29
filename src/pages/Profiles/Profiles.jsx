@@ -14,8 +14,10 @@ const Profiles = (props) => {
 
   let profIdx = profiles.map((profile,idx) =>{
     return(
+      <div className='user-card'>
     <p key={profile._id} onClick={()=> props.handleClick(profile)}>
     <Link to="/profile">Hello! {profile.name}</Link></p>
+    </div>
     )
   }
   )
@@ -23,10 +25,12 @@ const Profiles = (props) => {
     <>
     <main>
       <div className='main-center'>
-        <h1>Hello. This is a list of all the profiles.</h1>
+        <h1 className='h1'>All users</h1>
         {profiles.length ? 
           <>
+          <div className='cards'>
           {profIdx}
+          </div>
           </>
         :
           <p>No profiles yet</p>

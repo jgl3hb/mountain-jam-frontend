@@ -13,7 +13,7 @@ const NavBar = ({ user, profile, handleLogout, handleClick }) => {
             </div>
             <div>
               <Link to="/">
-                <img src="../Logo test.PNG" alt="" />
+                <img id='jam-logo' src="../Logo test.PNG" alt="" />
               </Link>
             </div>
             <ul>
