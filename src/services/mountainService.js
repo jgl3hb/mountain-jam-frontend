@@ -41,9 +41,14 @@ function update(mountain) {
   .then(res => res.json())
 }
 
+function createComment {
+
+}
+
 export { 
   create,
   getAllMountains,
   deleteMountain,
   update,
+  createComment,
 }
