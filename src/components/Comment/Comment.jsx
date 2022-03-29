@@ -16,12 +16,14 @@ function CreateComment(props) {
 	}, [formData])
 
 	const handleSubmit = evt => {
+    const mountain=props.mountain
 		evt.preventDefault()
 		const commentFormData = new FormData()
 		commentFormData.append('photo', formData.photo)
 		commentFormData.append('visitDate', formData.date)
 		commentFormData.append('comment', formData.comment)
-		props.handleCreateComment(commentFormData)
+    console.log('formData', commentFormData)
+		props.handleCreateComment(mountain, commentFormData)
 	}
 
 	const handleChangePhoto = (evt) => {
@@ -46,6 +48,8 @@ function CreateComment(props) {
             required
             ></textarea>
           <br />
+            <label for="date">Date of your visit:</label>
+            <br />
             <input 
             type='date'
             id='date-input'
