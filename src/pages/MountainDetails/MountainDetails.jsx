@@ -19,8 +19,6 @@ const MountainDetails = (props) => {
 
   // }
 
-
-
   return(
     <>
     <main>

@@ -39,7 +39,7 @@ function CreateComment(props) {
           ref={formElement}
           autoComplete="off"
           method="POST">
-            <label for="user-comments">Share your expreience here:</label>
+            <label htmlFor="user-comments">Share your expreience here:</label>
           <br />
             <textarea 
             name="comment" 
@@ -48,7 +48,7 @@ function CreateComment(props) {
             required
             ></textarea>
           <br />
-            <label for="date">Date of your visit:</label>
+            <label htmlFor="date">Date of your visit:</label>
             <br />
             <input 
             type='date'
@@ -58,7 +58,7 @@ function CreateComment(props) {
             />
           <br />
             <button 
-            class="add-comment" 
+            className="add-comment" 
             type="submit"
             disabled={!validForm}
             >Add Comment

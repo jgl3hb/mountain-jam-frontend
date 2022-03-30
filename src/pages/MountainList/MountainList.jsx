@@ -5,7 +5,6 @@ import MountainDetails from '../MountainDetails/MountainDetails'
 
 const MountainList = (props) => {
 const mountains = props.mountains  
-const shortArray = mountains.slice(0, 18)
 
     return (
       <>
@@ -14,13 +13,13 @@ const shortArray = mountains.slice(0, 18)
       <div className='cards'>
       {mountains.length ? 
         <>
-          {shortArray.map(mountain=>
-          <Mountain 
-          key={mountain._id}
-          mountain={mountain}
-          handleDeleteMountain={props.handleDeleteMountain}
-          user={props.user}/>
-            )}
+          {mountains.map(mountain=>
+            <Mountain 
+            key={mountain._id}
+            mountain={mountain}
+            handleDeleteMountain={props.handleDeleteMountain}
+            user={props.user}/>
+          )}
         
         </>
         :
