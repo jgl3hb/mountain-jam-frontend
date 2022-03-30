@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import MyProfile from "../../components/MyProfile/MyProfile";
 import Mountain from "../../components/Mountain/Mountain";
 
+
+
 const ProfileDetails = (props) => {
   const toVisit = props.profile.toVisit
   return (
@@ -12,7 +14,7 @@ const ProfileDetails = (props) => {
         <>
           <p>This is {props.profile.name}'s page</p>
           <div>My Mountains</div>
-          <div className='cards'>
+          <div className='profile-cards'>
             {toVisit.length ? 
           <>
             {toVisit.map(mountain=>
