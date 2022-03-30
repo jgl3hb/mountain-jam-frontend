@@ -108,7 +108,7 @@ a:hover{
   height: 200px;
   margin-bottom: 3%;
   border: 1px solid black;
-  background-image:url('https://picsum.photos/id/1018/320/200')
+  /* background-image:url('https://picsum.photos/id/1018/320/200') */
 }
 
 .mountain-dets{
