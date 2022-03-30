@@ -114,6 +114,39 @@ a:hover{
   
 }
 
+.each-card.country{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border: 1px solid rgb(88, 86, 86);
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px grey;
+  font-family: 'Eczar', serif;
+  font-size: x-large;
+  background-size:cover;
+  background-position: 50%;
+}
+
+.flag-text{
+  background-color: rgba(255, 255, 255, 1);
+  width: fit-content;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 3px;
+  transition: 0.3s;
+  margin-bottom: 5px;
+}
+
+.flag-text:hover{
+  background-color: rgb(39, 38, 38);
+  color: #ffffff;
+}
+
+.p-flag{
+  padding: 0;
+  margin: 0;
+}
+
 .mountain-dets{
   text-align: center;
   
@@ -139,6 +172,8 @@ a:hover{
   text-align: center;
   align-items: center;
 }
+
+
 
 
 @media only screen and (max-width: 1200px)  {

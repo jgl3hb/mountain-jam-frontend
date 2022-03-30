@@ -9,7 +9,7 @@ const countries = props.countries
     <>
     <main>
     <h1>Country List</h1>
-    <div className='cards'>
+    <div  className='cards'>
     {countries.length ? 
       <>
         {countries.map(country=>

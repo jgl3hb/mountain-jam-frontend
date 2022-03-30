@@ -5,9 +5,13 @@ import { Link } from "react-router-dom";
 const Country = ({country}) => {
   return (
     <>
-      <div key={country._id} className='each-card'>
-        <Link state={{country}} to="/country">
-          <p>{country.name}</p>
+      <div
+      style={{  
+        backgroundImage: `url(${country.flag})`}
+      }
+      key={country._id} className='each-card country'>
+        <Link className="flag-text" state={{country}} to="/country">
+          <p className="p-flag">{country.name}</p>
         </Link>
       </div>
     </>
