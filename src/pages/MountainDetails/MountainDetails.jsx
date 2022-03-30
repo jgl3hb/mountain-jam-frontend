@@ -12,6 +12,11 @@ const MountainDetails = (props) => {
 
   function addToCollection(mountainId){
     console.log("testing add to profile function!!!!")
+    // takes the ID of a mountain and sends to the backend
+    //Backend controller function pushes it to a not visited array
+    // backend  reurns profile with added mountain id to the front end
+    // MyProfile page maps through an array and populates mountains in cards
+
   }
 
   return(

@@ -9,4 +9,16 @@ async function getAllProfiles() {
   return await res.json()
 }
 
-export { getAllProfiles }
+function addPeak(peak) {
+  return fetch(`${BASE_URL}/addPeak`, {
+    method: "POST",
+    headers: { 
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(peak)
+  })
+  .then(res => res.json())
+}
+
+export { getAllProfiles, addPeak }
