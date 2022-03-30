@@ -21,7 +21,7 @@ function AddMountain(props) {
   const handleSubmit = evt => {
     evt.preventDefault()
 		const mountainFormData = new FormData()
-		// mountainFormData.append('photo', formData.photo)
+		mountainFormData.append('photo', formData.photo)
     mountainFormData.append('name', formData.name)
     mountainFormData.append('elevation', formData.elevation)
     mountainFormData.append('countries', formData.countries)
