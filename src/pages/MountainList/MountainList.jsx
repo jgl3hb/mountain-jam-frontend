@@ -14,12 +14,12 @@ const mountains = props.mountains
       {mountains.length ? 
         <>
           {mountains.map(mountain=>
-          <Mountain 
-          key={mountain._id}
-          mountain={mountain}
-          handleDeleteMountain={props.handleDeleteMountain}
-          user={props.user}/>
-            )}
+            <Mountain 
+            key={mountain._id}
+            mountain={mountain}
+            handleDeleteMountain={props.handleDeleteMountain}
+            user={props.user}/>
+          )}
         
         </>
         :

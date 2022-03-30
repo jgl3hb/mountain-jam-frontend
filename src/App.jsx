@@ -17,6 +17,9 @@ import MyProfile from './components/MyProfile/MyProfile'
 import AddMountain from './pages/AddMountain/AddMountain'
 import EditMountain from './pages/EditMountain/EditMountain'
 import SearchBar from './components/SearchBar/SearchBar'
+import CountryList from './pages/CountryList/CountryList'
+import * as countryService from './services/countryService'
+import CountryDetails from './pages/CountryDetails/CountryDetails'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -24,6 +27,12 @@ const App = () => {
   const navigate = useNavigate()
   const [mountains, setMountains] = useState([])
   const [userProfile, setUserProfile] = useState(null)
+  const [countries, setCountries] = useState([])
+
+  useEffect(()=> {
+    countryService.getAllCountries()
+    .then(countries => setCountries(countries))
+  }, [])
 
   useEffect(()=> {
     mountainService.getAllMountains()
@@ -39,7 +48,6 @@ const App = () => {
   }, [])
 
   useEffect(()=> {
-    console.log('myprofile', userProfile)
   },[userProfile])
 
   const handleAddMountain = async newMountainData => {
@@ -102,20 +110,35 @@ const App = () => {
         <Route path="/addmountain" element={<AddMountain handleAddMountain={handleAddMountain} />} />
 
         <Route path='/mountains'
-            element={ 
-              user ?
-              <>
-                <MountainList
-                  handleDeleteMountain={handleDeleteMountain}
-                  mountains={mountains}
-                  user={user} 
-                />
-                <SearchBar searchMountain={searchMountain} />
-              </>
-              :
-              <Navigate to='/login' />
-            }
-          />
+          element={ 
+            user ?
+            <>
+              <MountainList
+                handleDeleteMountain={handleDeleteMountain}
+                mountains={mountains}
+                user={user} 
+              />
+              <SearchBar searchMountain={searchMountain} />
+            </>
+            :
+            <Navigate to='/login' />
+          }
+        />
+
+        <Route path='/countries'
+          element={
+            <>
+              <CountryList countries={countries} user={user}/>
+            </>
+          }
+        />
+
+        <Route path='/country'
+          element={
+            <>
+              <CountryDetails />
+            </>
+          } />
 
         <Route path="/editmountain" element={<EditMountain handleUpdateMountain={handleUpdateMountain} />} />
 

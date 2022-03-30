@@ -10,6 +10,7 @@ const NavBar = ({ user, profile, handleLogout, handleClick }) => {
               <li id='welcome'>Welcome, {user.name}</li>
               <li><Link to='/mountains'>All Mountains</Link>
               </li>
+              <li><Link to='/countries'>Countries</Link> </li>
             </div>
             <div>
               <Link to="/">
