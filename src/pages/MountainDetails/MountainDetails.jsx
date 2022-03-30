@@ -23,11 +23,18 @@ const MountainDetails = (props) => {
         {mountain.range? 
         <>
           <p>It's part of the {mountain.range} range</p>
-          <p>Comment{mountain.comments}</p>
         </>
         :
         <p></p>
-        }
+      }
+      <p>Comments:</p>
+      {mountain.comments.length? mountain.comments.map(comments => {
+        return(
+          <p>{comments.comment}</p>
+        )
+      })
+        : "No comments yet:( Be the first to leave a comment."
+      }
         </div>
         <CreateComment handleCreateComment={props.handleCreateComment} mountain={mountain}/>
         <Link
