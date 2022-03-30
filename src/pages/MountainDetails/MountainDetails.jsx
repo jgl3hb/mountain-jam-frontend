@@ -7,7 +7,12 @@ import CreateComment from "../../components/Comment/Comment";
 const MountainDetails = (props) => {
   const location = useLocation()
   const mountain = location.state.mountain
-  console.log('props', props)
+  console.log("Mountain!!!!!!", mountain )
+  // function that will pass mountainId to the backend
+
+  function addToCollection(mountainId){
+    console.log("testing add to profile function!!!!")
+  }
 
   return(
     <>
@@ -36,7 +41,7 @@ const MountainDetails = (props) => {
         : "No comments yet:( Be the first to leave a comment."
       }
         </div>
-        <button
+        <button onClick={() => addToCollection()}
         >Add To My Profile</button>
         <CreateComment handleCreateComment={props.handleCreateComment} mountain={mountain}/>
         <Link
