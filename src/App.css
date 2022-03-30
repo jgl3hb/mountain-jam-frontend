@@ -105,6 +105,7 @@ a:hover{
 .each-card{
   flex: 0 0 33.333333%;
   max-width: 15%;
+  min-width: 15vh;
   height: 200px;
   margin-bottom: 3%;
   border: 1px solid black;
@@ -119,6 +120,8 @@ a:hover{
 .user-card{
   flex: 0 0 33.333333%;
   max-width: 40%;
+  min-width: 20vh;
+  margin-left: 15px;
   height: 30vh;
   max-height: 300px;
   margin-bottom: 3%;
