@@ -7,7 +7,6 @@ import CreateComment from "../../components/Comment/Comment";
 const MountainDetails = (props) => {
   const location = useLocation()
   const mountain = location.state.mountain
-  console.log('props', props)
 
   return(
     <>
