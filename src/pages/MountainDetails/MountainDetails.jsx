@@ -36,6 +36,8 @@ const MountainDetails = (props) => {
         : "No comments yet:( Be the first to leave a comment."
       }
         </div>
+        <button
+        >Add To My Profile</button>
         <CreateComment handleCreateComment={props.handleCreateComment} mountain={mountain}/>
         <Link
           to='/editmountain'
