@@ -16,6 +16,7 @@ import MountainDetails from './pages/MountainDetails/MountainDetails'
 import MyProfile from './components/MyProfile/MyProfile'
 import AddMountain from './pages/AddMountain/AddMountain'
 import EditMountain from './pages/EditMountain/EditMountain'
+import SearchBar from './components/SearchBar/SearchBar'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -26,7 +27,7 @@ const App = () => {
 
   useEffect(()=> {
     mountainService.getAllMountains()
-    .then(mountains => setMountains(mountains))
+    .then(mountains => setMountains(mountains.slice(0, 18)))
   }, [])
 
   useEffect(()=> {
@@ -53,7 +54,6 @@ const App = () => {
   }
 
   const handleDeleteMountain = id => {
-    console.log('is this working?')
     mountainService.deleteMountain(id)
     .then(deletedMountain => setMountains(mountains.filter(mountain => mountain._id !== deletedMountain._id)))
   }
@@ -66,6 +66,12 @@ const App = () => {
       navigate('/mountains')
     })
   }
+
+  const searchMountain = searchString => {
+    mountainService.search(searchString)
+    .then(mountains => setMountains(mountains))
+  }
+
   
   const handleLogout = () => {
     authService.logout()
@@ -93,18 +99,19 @@ const App = () => {
 
         <Route path="/myprofile" element={<ProfileDetails user={user} userProfile={userProfile} profile={profile} />} />
 
-        <Route path="/mountains" element={<MountainList mountains={mountains} />} />
-
         <Route path="/addmountain" element={<AddMountain handleAddMountain={handleAddMountain} />} />
 
         <Route path='/mountains'
             element={ 
               user ?
-              <MountainList
-                handleDeleteMountain={handleDeleteMountain}
-                mountains={mountains}
-                user={user} 
-              />
+              <>
+                <MountainList
+                  handleDeleteMountain={handleDeleteMountain}
+                  mountains={mountains}
+                  user={user} 
+                />
+                <SearchBar searchMountain={searchMountain} />
+              </>
               :
               <Navigate to='/login' />
             }

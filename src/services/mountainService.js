@@ -54,10 +54,18 @@ function createComment(mountain, comment) {
   .then(res => res.json())
 }
 
+function search(search) {
+  return fetch(`${BASE_URL}/search/${search}`, {
+    method: 'GET',
+  })
+  .then(res => res.json())
+}
+
 export { 
   create,
   getAllMountains,
   deleteMountain,
   update,
   createComment,
+  search,
 }

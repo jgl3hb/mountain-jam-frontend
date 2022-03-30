@@ -7,7 +7,6 @@ import CreateComment from "../../components/Comment/Comment";
 const MountainDetails = (props) => {
   const location = useLocation()
   const mountain = location.state.mountain
-  console.log('props', props)
 
   return(
     <>
@@ -23,7 +22,6 @@ const MountainDetails = (props) => {
         {mountain.range? 
         <>
           <p>It's part of the {mountain.range} range</p>
-          <p>Comment{mountain.comments}</p>
         </>
         :
         <p></p>
