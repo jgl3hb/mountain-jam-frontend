@@ -105,10 +105,13 @@ a:hover{
 .each-card{
   flex: 0 0 33.333333%;
   max-width: 15%;
+  min-width: 15vh;
   height: 200px;
   margin-bottom: 3%;
   border: 1px solid black;
-  background-image:url('https://picsum.photos/id/1018/320/200')
+  background-image:url('https://picsum.photos/id/1018/320/200');
+  /* margin-left: 15px; */
+  
 }
 
 .mountain-dets{
@@ -119,12 +122,22 @@ a:hover{
 .user-card{
   flex: 0 0 33.333333%;
   max-width: 40%;
+  min-width: 20vh;
+  margin-left: 15px;
   height: 30vh;
   max-height: 300px;
   margin-bottom: 3%;
   border: 1px solid black;
   box-shadow: 1px 2px 6px black;
   border-radius: 5px;
+}
+
+.profile-cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
 }
 
 

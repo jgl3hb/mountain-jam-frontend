@@ -1,12 +1,23 @@
 import { useLocation, Link } from "react-router-dom";
 import MountainList from "../MountainList/MountainList";
 import CreateComment from "../../components/Comment/Comment";
+import * as profileService from"../../services/profileService.js"
 
 
 
 const MountainDetails = (props) => {
   const location = useLocation()
   const mountain = location.state.mountain
+
+  // function that will pass mountainId to the backend
+  // function addPeakToCollection(mountainId){
+  //   console.log("testing add to profile function!!!!")
+    // takes the ID of a mountain and sends to the backend
+    //Backend controller function pushes it to a not visited array
+    // backend  reurns profile with added mountain id to the front end
+    // MyProfile page maps through an array and populates mountains in cards
+
+  // }
 
   return(
     <>
@@ -35,6 +46,8 @@ const MountainDetails = (props) => {
         : "No comments yet:( Be the first to leave a comment."
       }
         </div>
+        <button onClick={() => props.addPeakToCollection(mountain)}
+        >Add To My Profile</button>
         <CreateComment handleCreateComment={props.handleCreateComment} mountain={mountain}/>
         <Link
           to='/editmountain'

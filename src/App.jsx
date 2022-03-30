@@ -95,6 +95,14 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  const addPeakToCollection = peak => {
+    profileService.addPeak(peak)
+    console.log("This baby is working!!!!!!",peak)
+    .then(updatedProfile => {
+      setProfile(updatedProfile)
+    })
+  }
+
   return (
     <>
 
@@ -143,6 +151,7 @@ const App = () => {
         <Route path="/editmountain" element={<EditMountain handleUpdateMountain={handleUpdateMountain} />} />
 
         <Route path="/mountain" element={<MountainDetails
+        addPeakToCollection={addPeakToCollection}
         handleDeleteMountain={handleDeleteMountain} handleCreateComment={handleCreateComment} />} />
         
         <Route
