@@ -147,6 +147,11 @@ a:hover{
   margin: 0;
 }
 
+.country-dets-img{
+  height: 150px;
+  border: 2px solid black;
+}
+
 .mountain-dets{
   text-align: center;
   
