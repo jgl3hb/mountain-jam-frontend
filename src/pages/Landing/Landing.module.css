@@ -1,5 +1,21 @@
 .container {
   display: flex;
-  align-items: center;
+  align-items:center;
+  justify-content: start;
   flex-direction: column;
+  font-family: 'Satisfy', cursive,'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 3vh;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  position: fixed;
+  background-image: url('../../../public/main.png');
+  background-position: 100%;
+  background-repeat: no-repeat;
+
 }
+
+
+
