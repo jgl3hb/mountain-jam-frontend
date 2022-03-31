@@ -16,7 +16,6 @@ import MountainDetails from './pages/MountainDetails/MountainDetails'
 import MyProfile from './components/MyProfile/MyProfile'
 import AddMountain from './pages/AddMountain/AddMountain'
 import EditMountain from './pages/EditMountain/EditMountain'
-import SearchBar from './components/SearchBar/SearchBar'
 import CountryList from './pages/CountryList/CountryList'
 import * as countryService from './services/countryService'
 import CountryDetails from './pages/CountryDetails/CountryDetails'
@@ -28,7 +27,8 @@ const App = () => {
   const [mountains, setMountains] = useState([])
   const [userProfile, setUserProfile] = useState(null)
   const [countries, setCountries] = useState([])
-  const [addComment, setAddComment] = useState(0)
+  const [search, setSearch] = useState({query: ''})
+  const [searchResults, setSearchResults] = useState({mountains: []})
 
   useEffect(()=> {
     countryService.getAllCountries()
@@ -48,9 +48,6 @@ const App = () => {
     }) 
   }, [])
 
-  useEffect(()=> {
-  },[userProfile])
-
   const handleAddMountain = async newMountainData => {
     const newMountain = await mountainService.create(newMountainData)
     setMountains([...mountains, newMountain])
@@ -60,8 +57,6 @@ const App = () => {
   const handleCreateComment = async (mountain, newCommentData) => {
     const updatedMountain = await mountainService.createComment(mountain, newCommentData)
     setMountains(mountains.map(m => m._id === updatedMountain._id ? updatedMountain : m))
-    // setMountains(...mountains, newComment)
-    // setAddComment(addComment + 1)
   }
 
   const handleDeleteMountain = id => {
@@ -77,12 +72,6 @@ const App = () => {
       navigate('/mountains')
     })
   }
-
-  const searchMountain = searchString => {
-    mountainService.search(searchString)
-    .then(mountains => setMountains(mountains))
-  }
-
   
   const handleLogout = () => {
     authService.logout()
@@ -128,13 +117,11 @@ const App = () => {
                 mountains={mountains}
                 user={user} 
               />
-              <SearchBar searchMountain={searchMountain} />
             </>
             :
             <Navigate to='/login' />
           }
         />
-
         <Route path='/countries'
           element={
             <>
