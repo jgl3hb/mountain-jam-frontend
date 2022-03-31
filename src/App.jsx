@@ -41,7 +41,7 @@ const App = () => {
 
   useEffect(()=> {
     mountainService.getAllMountains()
-    .then(mountains => setMountains(mountains.slice(0, 18)))
+    .then(mountains => setMountains(mountains))
   }, [])
 
   useEffect(()=> {
@@ -163,6 +163,7 @@ const App = () => {
         handleDeleteMountain={handleDeleteMountain} 
         handleCreateComment={handleCreateComment} 
         mountains={mountains}
+        userProfile={userProfile}
         />} />
         
         <Route
