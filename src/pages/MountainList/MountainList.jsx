@@ -1,4 +1,3 @@
-// import { useState, useEffect } from 'react'
 import Mountain from '../../components/Mountain/Mountain'
 import { Link } from 'react-router-dom'
 import MountainDetails from '../MountainDetails/MountainDetails'
@@ -17,16 +16,15 @@ useEffect(()=> {
   const handleSearch = evt => {
     setSearch({...search, [evt.target.name]: evt.target.value.toLowerCase()})
   }
-
-  useEffect (() => {
-    setMountains(props.mountains)
-  }, [])
   
   const handleSubmitSearch = evt => {
     evt.preventDefault()
     props.handleSubmitSearch()
   }
-
+  useEffect (() => {
+    setMountains(props.mountains)
+  }, [])
+  
     return (
       <>
       <main>

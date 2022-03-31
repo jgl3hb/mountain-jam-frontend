@@ -125,7 +125,12 @@ const App = () => {
         <Route path='/countries'
           element={
             <>
-              <CountryList countries={countries} user={user}/>
+              <CountryList 
+              countries={countries} 
+              user={user}
+              mountains={mountains}
+              handleDeleteMountain={handleDeleteMountain}
+              />
             </>
           }
         />
@@ -133,7 +138,11 @@ const App = () => {
         <Route path='/country'
           element={
             <>
-              <CountryDetails />
+              <CountryDetails
+                user={user}
+                mountains={mountains}
+                handleDeleteMountain={handleDeleteMountain}              
+              />
             </>
           } />
 
