@@ -31,8 +31,21 @@
   height: 70%;
   text-align: center;
   padding: 10px;
-  
+  transition: .3s;
 }
+
+#linkone:hover{
+  margin-top: 0;
+}
+
+#linktwo:hover{
+  margin-top: 0;
+}
+
+#linkthree:hover{
+  margin-top: 0;
+}
+
 
 a.links{
   word-wrap: break-word;
