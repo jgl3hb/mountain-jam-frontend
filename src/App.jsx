@@ -28,6 +28,7 @@ const App = () => {
   const [mountains, setMountains] = useState([])
   const [userProfile, setUserProfile] = useState(null)
   const [countries, setCountries] = useState([])
+  const [addComment, setAddComment] = useState(0)
 
   useEffect(()=> {
     countryService.getAllCountries()
@@ -57,8 +58,10 @@ const App = () => {
   }
 
   const handleCreateComment = async (mountain, newCommentData) => {
-    console.log('commentData', newCommentData.comment)
-    const newComment = await mountainService.createComment(mountain, newCommentData)
+    const updatedMountain = await mountainService.createComment(mountain, newCommentData)
+    setMountains(mountains.map(m => m._id === updatedMountain._id ? updatedMountain : m))
+    // setMountains(...mountains, newComment)
+    // setAddComment(addComment + 1)
   }
 
   const handleDeleteMountain = id => {
@@ -152,7 +155,10 @@ const App = () => {
 
         <Route path="/mountain" element={<MountainDetails
         addPeakToCollection={addPeakToCollection}
-        handleDeleteMountain={handleDeleteMountain} handleCreateComment={handleCreateComment} />} />
+        handleDeleteMountain={handleDeleteMountain} 
+        handleCreateComment={handleCreateComment} 
+        mountains={mountains}
+        />} />
         
         <Route
           path="/signup"
