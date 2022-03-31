@@ -111,6 +111,12 @@ a:hover{
   /* background-image:url('https://picsum.photos/id/1018/320/200') */
 }
 
+.cloud-pic {
+  height: 200px;
+}
+
+
+
 .mountain-dets{
   text-align: center;
 }
