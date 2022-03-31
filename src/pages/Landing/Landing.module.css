@@ -3,18 +3,38 @@
   align-items:center;
   justify-content: start;
   flex-direction: column;
+  height: 100vh;
   font-family: 'Satisfy', cursive,'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 3vh;
-  height: 100%;
-  width: 100%;
   left: 0;
   top: 0;
-  overflow: hidden;
-  position: fixed;
   background-image: url('../../../public/main.png');
-  background-position: 100%;
-  background-repeat: no-repeat;
+  background-position:center;
+}
 
+.alllinks{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 5%;
+}
+
+.onelink{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:aqua;
+  border: 1px solid black;
+  background-color: aliceblue;
+  max-width: 200px;
+  height: 70%;
+  text-align: center;
+  padding: 10px;
+}
+
+a.links{
+  word-wrap: break-word;
+  font-family: 'Eczar','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 

@@ -66,10 +66,11 @@ ul{
 #quote{
   width: 50%;
   border: 1px solid grey;
+  margin-top: 7%;
   padding: 40px;
   border-radius: 2px;
   background-color: #ffffff;
-  box-shadow: 1px 5px 6px rgb(171, 171, 230);
+  box-shadow: 1px 2px 6px rgb(182, 182, 183);
 }
 
 a{

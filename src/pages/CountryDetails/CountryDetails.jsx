@@ -20,7 +20,5 @@ const CountryDetails = (props) => {
   )
 }
 
-//if country.name === mountain.country[0]
-//then get api call to show the list of mountains
 
 export default CountryDetails;
