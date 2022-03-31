@@ -37,7 +37,7 @@ const App = () => {
 
   useEffect(()=> {
     mountainService.getAllMountains()
-    .then(mountains => setMountains(mountains.slice(0, 18)))
+    .then(mountains => setMountains(mountains))
   }, [])
 
   useEffect(()=> {
@@ -100,7 +100,6 @@ const App = () => {
 
   const addPeakToCollection = peak => {
     profileService.addPeak(peak)
-    console.log("This baby is working!!!!!!",peak)
     .then(updatedProfile => {
       setProfile(updatedProfile)
     })
@@ -158,6 +157,7 @@ const App = () => {
         handleDeleteMountain={handleDeleteMountain} 
         handleCreateComment={handleCreateComment} 
         mountains={mountains}
+        userProfile={userProfile}
         />} />
         
         <Route

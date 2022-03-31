@@ -9,29 +9,16 @@ import { update } from "../../services/mountainService";
 
 const MountainDetails = (props) => {
   const location = useLocation()
-  // const mountain = location.state.mountain
-  // const [mountain, setMountain] = useState(location.state.mountain)
-  console.log('location', location.state.mountain._id)
   const mountain = props.mountains.find(m => m._id === location.state.mountain._id)
-  console.log('mountain', mountain)
-  // useEffect(() => {
-  //   setMountain(location.state.mountain)
-  //   console.log('line 16', mountain)
-  // }, []) 
-    
-  
-  // function that will pass mountainId to the backend
-  // function addPeakToCollection(mountainId){
-  //   console.log("testing add to profile function!!!!")
-    // takes the ID of a mountain and sends to the backend
-    //Backend controller function pushes it to a not visited array
-    // backend  reurns profile with added mountain id to the front end
-    // MyProfile page maps through an array and populates mountains in cards
 
-  // }
+  const [userProfile, setUserProfile] = useState(props.userProfile[0])
+  
+  console.log('profile', userProfile)
+  console.log(mountain);
+  
 
   return(
-    mountain ?
+    mountain.name ?
     <>
     <main>
       <h1>Mountain details</h1>
@@ -58,8 +45,12 @@ const MountainDetails = (props) => {
         : "No comments yet:( Be the first to leave a comment."
       }
         </div>
-        <button onClick={() => props.addPeakToCollection(mountain)}
-        >Add To My Profile</button>
+        {userProfile.toVisit?.some(profileMountain=> profileMountain._id === mountain._id) ? 
+          <p>Already Added</p>
+        :
+          <button onClick={() => props.addPeakToCollection(mountain)}
+          >Add To My Profile</button>
+        }
         <CreateComment  
         handleCreateComment={props.handleCreateComment} 
         mountain={mountain}/>
