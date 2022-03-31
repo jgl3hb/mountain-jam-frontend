@@ -29,6 +29,10 @@ const App = () => {
   const [userProfile, setUserProfile] = useState(null)
   const [countries, setCountries] = useState([])
 
+  // console.log("App JSX Profile", profile)
+  // console.log("App JSX userProfile", userProfile)
+  // console.log("App JSX User", user)
+
   useEffect(()=> {
     countryService.getAllCountries()
     .then(countries => setCountries(countries))
@@ -46,6 +50,8 @@ const App = () => {
         setUserProfile(myProfile)
     }) 
   }, [])
+
+  const setUsrProf2 = 
 
   useEffect(()=> {
   },[userProfile])
@@ -97,7 +103,6 @@ const App = () => {
 
   const addPeakToCollection = peak => {
     profileService.addPeak(peak)
-    console.log("This baby is working!!!!!!",peak)
     .then(updatedProfile => {
       setProfile(updatedProfile)
     })
