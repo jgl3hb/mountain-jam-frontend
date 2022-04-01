@@ -8,9 +8,10 @@ const ProfileDetails = (props) => {
   return (
     <>
     <main className="all-users-main">
-    <h1>Profile Details</h1>
+    <h1 className="prof-dets">Profile Details</h1>
     {props.userProfile ? 
       <>
+      <div className="frame">
       <div className="any-text">Hey {props.userProfile[0].name},</div>
       <div className="any-text">These are the mountains that you havent visited yet: </div>
       <div className='profile-cards'>
@@ -54,6 +55,7 @@ const ProfileDetails = (props) => {
             :
             <></>
           }
+          </div>
       </>
       :
       <>
