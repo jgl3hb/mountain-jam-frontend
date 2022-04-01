@@ -7,7 +7,7 @@ const ProfileDetails = (props) => {
   const visit = props.profile.visit
   return (
     <>
-    <main>
+    <main className="all-users-main">
     <h1>Profile Details</h1>
     {props.userProfile ? 
       <>
