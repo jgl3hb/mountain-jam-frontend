@@ -28,7 +28,7 @@ useEffect(()=> {
       <>
       <main >
       <h1>Mountain List</h1>
-      <form onSubmit={handleSubmitSearch}>
+      <form className='search' onSubmit={handleSubmitSearch}>
         <input 
         onChange={handleSearch} 
         value={search.query}

@@ -6,13 +6,13 @@ const Mountain = ({mountain}) => {
     <>
       <div key={mountain._id} className='each-card-top'
       >
-      <img 
+      <img className="mountain-pic"
         src={mountain.photo ? mountain.photo : `https://picsum.photos/id/1018/200/150`} 
-        className="card-img-top" 
+        // className="card-img-top" 
         alt='mountain'
       />
         <Link state={{mountain}} to="/mountain">
-          <p >{mountain.name}</p>
+          <p className="mntn-name">{mountain.name}</p>
         </Link>
       </div>
     </>

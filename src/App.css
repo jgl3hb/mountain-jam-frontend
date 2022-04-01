@@ -127,6 +127,17 @@ li.nav-links{
   align-items: center;
 }
 
+.each-card-top{
+  flex: 0 0 33.333333%;
+  max-width: 15%;
+  min-width: 15vh;
+  height: 270px;
+  margin-bottom: 3%;
+  border: 1px solid black;
+  /* background-image:url('https://picsum.photos/id/1018/320/200') */
+  margin: 15px;
+}
+
 .each-card{
   flex: 0 0 33.333333%;
   max-width: 15%;
@@ -134,9 +145,11 @@ li.nav-links{
   height: 200px;
   margin-bottom: 3%;
   border: 1px solid black;
-  /* background-image:url('https://picsum.photos/id/1018/320/200') */
-  /* margin-left: 15px; */
-  
+}
+
+.mountain-pic{
+  padding-top: 10px;
+  height: 200px;
 }
 
 .countries-main{
