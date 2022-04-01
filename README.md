@@ -17,6 +17,7 @@ Technologies used:
 ![Bootstrap](https://img.shields.io/badge/-Bootstrap-white?style=for-the-badge&logo=bootstrap)
 ![React](https://img.shields.io/badge/-React-white?style=for-the-badge&logo=React&logoColor=blue)
 ![Heroku](https://img.shields.io/badge/-Heroku-white?style=for-the-badge&logo=heroku&logoColor=black)
+![Cloudinary](https://img.shields.io/badge/-Cloudinary-white?style=for-the-badge&logo=cloudinary&logoColor=black)
 
 
 Objective:
