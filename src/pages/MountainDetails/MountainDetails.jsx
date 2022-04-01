@@ -13,8 +13,8 @@ const MountainDetails = (props) => {
   return(
     mountain.name ?
     <>
-    <main>
-      <h1>Mountain details</h1>
+    <main className="mountain-dets-main">
+      <h1 className="h1-country">Mountain details</h1>
       <div className="mountain-dets">
         <p>This is {mountain.name}</p>
         <p>It's located in {mountain.countries[0]} </p>

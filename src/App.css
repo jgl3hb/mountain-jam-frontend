@@ -194,6 +194,14 @@ li.nav-links{
   width: 25vh;
 }
 
+.mountain-dets-main{
+  height: 100vh;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjooinn.com%2Fimages%2Ftwo-man-hiking-on-snow-mountain.jpg&f=1&nofb=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .countries-main{
   background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallartcanvases.com%2Fwp-content%2Fuploads%2F2020%2F08%2FMap-Of-The-World-Background-Paper-Color-Blue-Globe-free-printable-wall-art-2048x1224.jpg&f=1&nofb=1');
   background-position: center;
