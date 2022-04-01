@@ -26,15 +26,16 @@ useEffect(()=> {
   
     return (
       <>
-      <main >
-      <h1>Mountain List</h1>
-      <form onSubmit={handleSubmitSearch}>
-        <input 
+      <main className='mountains-main'>
+      <h1 className="h1-country">Mountain List</h1>
+      <form className='search' onSubmit={handleSubmitSearch}>
+        <input
+        className='search' 
         onChange={handleSearch} 
         value={search.query}
         name="query"
         type="search"
-        placeholder='search'
+        placeholder='Name of the mountain ...'
         aria-label='search'
         />
       </form>

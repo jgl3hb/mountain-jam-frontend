@@ -29,6 +29,7 @@
 
 h1{
   font-family: 'Raleway','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
 .any-text{
@@ -127,6 +128,58 @@ li.nav-links{
   align-items: center;
 }
 
+.search{
+  height: 30px;
+  width: 200px;
+  font-family: 'Raleway', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  box-shadow: 1px 1px 8px 2px #334a5249;
+  border: 0 solid #334A52;
+  transition: all 0.4s ease;}
+
+  .search:focus{
+    outline: none;
+  }
+
+  .mountains-main{
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapersmug.com%2Flarge%2Ffb6f49%2Fsunset-horizon-mountains-valley.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+.each-card-top{
+  flex: 0 0 100%;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 15%;
+  min-width: 270px;
+  height: 270px;
+  margin-bottom: 3%;
+  border: 2px solid rgb(117, 114, 114);
+  margin: 15px;
+  background-size: 93%;
+  background-position: 50% 15%;
+  background-repeat: no-repeat;
+  vertical-align:text-bottom;
+  box-shadow: 2px 2px 5px grey;
+  border-radius: 4px 4px 0 0;
+  transition: 0.3s;
+  background-color: #ffffff;
+}
+
+
+.each-card-top:hover{
+  box-shadow: 2px 2px 5px #96AFB8;
+  background-color: rgba(150, 175, 184, 0.297);
+}
+
+.mntn-name{
+  color: #00A7DD;
+  padding-top: 73%;
+  font-size: larger;
+}
+
 .each-card{
   flex: 0 0 33.333333%;
   max-width: 15%;
@@ -134,13 +187,84 @@ li.nav-links{
   height: 200px;
   margin-bottom: 3%;
   border: 1px solid black;
-  /* background-image:url('https://picsum.photos/id/1018/320/200') */
-  /* margin-left: 15px; */
-  
+}
+
+.mountain-pic{
+  padding-top: 10px;
+  width: 25vh;
+}
+
+.mountain-dets-main{
+  min-height: 100vh;
+  height: 100%;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjooinn.com%2Fimages%2Ftwo-man-hiking-on-snow-mountain.jpg&f=1&nofb=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-size: 22px;
+}
+
+#user-comments{
+  margin-top: 20px;
+  width: 35vh;
+  height: 10vh;
+  text-align: left;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#date-input{
+  width: 36vh;
+  height: 3vh;
+  margin-top: 20px;
+}
+
+button{
+  margin-top: 20px;
+  font-size: large;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(49, 129, 79);
+  background-color: #ffffffdb;
+  margin-bottom: 30px;
+}
+
+button:hover{
+  background-color: rgb(49, 129, 79);
+
 }
 
 .countries-main{
-  margin-top: 4%;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallartcanvases.com%2Fwp-content%2Fuploads%2F2020%2F08%2FMap-Of-The-World-Background-Paper-Color-Blue-Globe-free-printable-wall-art-2048x1224.jpg&f=1&nofb=1');
+  background-position: center;
+}
+
+.country-main{
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.imgur.com%2FQSoYOrV.jpg&f=1&nofb=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.country-list{
+  margin-top: 6%;
+  padding-bottom: 2%;
+}
+
+.country-dets{
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.h1-country{
+  margin-top: 6%;
 }
 
 .each-card.country{
@@ -154,6 +278,10 @@ li.nav-links{
   font-size: x-large;
   background-size:cover;
   background-position: 50%;
+}
+
+label{
+  text-align: center;
 }
 
 .flag-text{
@@ -186,14 +314,39 @@ li.nav-links{
   height: 200px;
 }
 
-
-
 .mountain-dets{
   text-align: center;
 }
 
+.prof-dets{
+  margin-top: 5%;
+}
+
+.my-profile-main{
+  height: 100%;
+  min-height: 100vh;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjooinn.com%2Fimages%2Ftwo-man-hiking-on-snow-mountain.jpg&f=1&nofb=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .all-users-main{
-  height: 100vh;
+  height:auto;
+  min-height: 100vh;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjooinn.com%2Fimages%2Ftwo-man-hiking-on-snow-mountain.jpg&f=1&nofb=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.frame{
+  border-radius: 5px;
+  padding: 1%;
+  background-color: #f6fcffae;
+  text-align: center;
 }
 
 .user-card{
@@ -228,6 +381,10 @@ li.nav-links{
   color: #61dafb;
 }
 
+.any-p-tag{
+  font-size: x-large;
+}
+
 .change-pass{
   display: flex;
   justify-content: center;
@@ -254,7 +411,7 @@ li.nav-links{
   padding: 10px;
   border-radius: 5px;
   border: 1px solid rgb(49, 129, 79);
-  background-color: #ffffff;
+  background-color: #ffffffdb;
   margin-bottom: 30px;
 }
 
@@ -264,6 +421,38 @@ li.nav-links{
   pointer-events: fill;
 }
 
+#add-comment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-mountain{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapersmug.com%2Flarge%2Ffb6f49%2Fsunset-horizon-mountains-valley.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+input{
+  margin-top: 15px;
+  height: 25px;
+}
+
+#photo-upload{
+  font-size: large;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(49, 129, 79);
+  background-color: #ffffffdb;
+  margin-bottom: 30px;
+  font-family: 'Raleway', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
 
 

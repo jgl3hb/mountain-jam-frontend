@@ -7,10 +7,11 @@ const ProfileDetails = (props) => {
   const visit = props.profile.visit
   return (
     <>
-    <main className="all-users-main">
-    <h1>Profile Details</h1>
+    <main className="my-profile-main">
+    <h1 className="prof-dets">Profile Details</h1>
     {props.userProfile ? 
       <>
+      <div className="frame">
       <div className="any-text">Hey {props.userProfile[0].name},</div>
       <div className="any-text">These are the mountains that you havent visited yet: </div>
       <div className='profile-cards'>
@@ -54,12 +55,14 @@ const ProfileDetails = (props) => {
             :
             <></>
           }
+          </div>
       </>
       :
       <>
+      <div className="frame">
       {props.profile._id === props.user.profile ? 
         <>
-          My Page
+          <p className="any-p-tag">My Page</p>
           <div className="any-text">These are the mountains that I havent visited yet: </div>
         </>
           :
@@ -115,6 +118,7 @@ const ProfileDetails = (props) => {
             :
             <></>
           }
+          </div>
       </>
     }
     </main>

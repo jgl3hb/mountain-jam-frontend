@@ -6,7 +6,7 @@ const countries = props.countries
   return (
     <>
     <main className='countries-main'>
-    <h1>Country List</h1>
+    <h1 className='country-list'>Country List</h1>
     <div  className='cards'>
     {countries.length ? 
       <>
