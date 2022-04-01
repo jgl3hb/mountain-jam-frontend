@@ -5,6 +5,7 @@
     {
       "src": "/favicon/favicon.png",
       "type": "image/png"
+
     }
   ],
   "display": "standalone",

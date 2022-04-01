@@ -16,7 +16,6 @@ import MountainDetails from './pages/MountainDetails/MountainDetails'
 import MyProfile from './components/MyProfile/MyProfile'
 import AddMountain from './pages/AddMountain/AddMountain'
 import EditMountain from './pages/EditMountain/EditMountain'
-import SearchBar from './components/SearchBar/SearchBar'
 import CountryList from './pages/CountryList/CountryList'
 import * as countryService from './services/countryService'
 import CountryDetails from './pages/CountryDetails/CountryDetails'
@@ -28,6 +27,12 @@ const App = () => {
   const [mountains, setMountains] = useState([])
   const [userProfile, setUserProfile] = useState(null)
   const [countries, setCountries] = useState([])
+  const [search, setSearch] = useState({query: ''})
+  const [searchResults, setSearchResults] = useState({mountains: []})
+
+  // console.log("App JSX Profile", profile)
+  // console.log("App JSX userProfile", userProfile)
+  // console.log("App JSX User", user)
 
   useEffect(()=> {
     countryService.getAllCountries()
@@ -36,7 +41,7 @@ const App = () => {
 
   useEffect(()=> {
     mountainService.getAllMountains()
-    .then(mountains => setMountains(mountains.slice(0, 18)))
+    .then(mountains => setMountains(mountains))
   }, [])
 
   useEffect(()=> {
@@ -47,9 +52,6 @@ const App = () => {
     }) 
   }, [])
 
-  useEffect(()=> {
-  },[userProfile])
-
   const handleAddMountain = async newMountainData => {
     const newMountain = await mountainService.create(newMountainData)
     setMountains([...mountains, newMountain])
@@ -57,8 +59,8 @@ const App = () => {
   }
 
   const handleCreateComment = async (mountain, newCommentData) => {
-    console.log('commentData', newCommentData.comment)
-    const newComment = await mountainService.createComment(mountain, newCommentData)
+    const updatedMountain = await mountainService.createComment(mountain, newCommentData)
+    setMountains(mountains.map(m => m._id === updatedMountain._id ? updatedMountain : m))
   }
 
   const handleDeleteMountain = id => {
@@ -74,12 +76,6 @@ const App = () => {
       navigate('/mountains')
     })
   }
-
-  const searchMountain = searchString => {
-    mountainService.search(searchString)
-    .then(mountains => setMountains(mountains))
-  }
-
   
   const handleLogout = () => {
     authService.logout()
@@ -97,7 +93,6 @@ const App = () => {
 
   const addPeakToCollection = peak => {
     profileService.addPeak(peak)
-    console.log("This baby is working!!!!!!",peak)
     .then(updatedProfile => {
       setProfile(updatedProfile)
     })
@@ -126,17 +121,20 @@ const App = () => {
                 mountains={mountains}
                 user={user} 
               />
-              <SearchBar searchMountain={searchMountain} />
             </>
             :
             <Navigate to='/login' />
           }
         />
-
         <Route path='/countries'
           element={
             <>
-              <CountryList countries={countries} user={user}/>
+              <CountryList 
+              countries={countries} 
+              user={user}
+              mountains={mountains}
+              handleDeleteMountain={handleDeleteMountain}
+              />
             </>
           }
         />
@@ -144,7 +142,11 @@ const App = () => {
         <Route path='/country'
           element={
             <>
-              <CountryDetails />
+              <CountryDetails
+                user={user}
+                mountains={mountains}
+                handleDeleteMountain={handleDeleteMountain}              
+              />
             </>
           } />
 
@@ -152,7 +154,11 @@ const App = () => {
 
         <Route path="/mountain" element={<MountainDetails
         addPeakToCollection={addPeakToCollection}
-        handleDeleteMountain={handleDeleteMountain} handleCreateComment={handleCreateComment} />} />
+        handleDeleteMountain={handleDeleteMountain} 
+        handleCreateComment={handleCreateComment} 
+        mountains={mountains}
+        userProfile={userProfile}
+        />} />
         
         <Route
           path="/signup"

@@ -21,16 +21,16 @@ function AddMountain(props) {
   const handleSubmit = evt => {
     evt.preventDefault()
 		const mountainFormData = new FormData()
-		// mountainFormData.append('photo', formData.photo)
+		mountainFormData.append('photo', formData.photo)
     mountainFormData.append('name', formData.name)
     mountainFormData.append('elevation', formData.elevation)
     mountainFormData.append('countries', formData.countries)
     props.handleAddMountain(mountainFormData)
   }
 
-  // const handleChangePhoto = evt => {
-	// 	setFormData({...formData, photo: evt.target.files[0]})
-	// }
+	const handleChangePhoto = evt => {
+		setFormData({...formData, photo: evt.target.files[0]})
+	}
 
 
   return (
@@ -82,6 +82,18 @@ function AddMountain(props) {
 						required
 					/>
         </div>
+        <div className="form-group mb-4">
+					<label htmlFor="photo-upload" className="form-label">
+						Upload Photo
+					</label>
+					<input
+						type="file"
+						className="form-control"
+						id="photo-upload"
+						name="photo"
+						onChange={handleChangePhoto}
+					/>
+				</div>
         <br />
 					<button
 						type="submit"
