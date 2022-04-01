@@ -26,8 +26,8 @@ useEffect(()=> {
   
     return (
       <>
-      <main className='countries-main'>
-      <h1>Mountain List</h1>
+      <main className='mountains-main'>
+      <h1 className="h1-country">Mountain List</h1>
       <form className='search' onSubmit={handleSubmitSearch}>
         <input
         className='search' 

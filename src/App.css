@@ -141,6 +141,13 @@ li.nav-links{
     outline: none;
   }
 
+  .mountains-main{
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapersmug.com%2Flarge%2Ffb6f49%2Fsunset-horizon-mountains-valley.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
 .each-card-top{
   flex: 0 0 100%;
   flex-direction: column;
@@ -185,11 +192,37 @@ li.nav-links{
 .mountain-pic{
   padding-top: 10px;
   width: 25vh;
-  /* height: 21vh; */
 }
 
 .countries-main{
-  margin-top: 4%;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallartcanvases.com%2Fwp-content%2Fuploads%2F2020%2F08%2FMap-Of-The-World-Background-Paper-Color-Blue-Globe-free-printable-wall-art-2048x1224.jpg&f=1&nofb=1');
+  background-position: center;
+}
+
+.country-main{
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.imgur.com%2FQSoYOrV.jpg&f=1&nofb=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.country-list{
+  margin-top: 6%;
+  padding-bottom: 2%;
+}
+
+.country-dets{
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.h1-country{
+  margin-top: 6%;
 }
 
 .each-card.country{

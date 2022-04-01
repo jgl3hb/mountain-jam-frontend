@@ -8,7 +8,7 @@ const Mountain = ({mountain}) => {
       style={{  
         backgroundImage: `url(${mountain.photo? mountain.photo : `https://picsum.photos/id/1018/200/150`})`}
       }
-      key={mountain._id} className='each-card-top'
+      key={mountain._id} className='each-card-top animate__animated animate__flipInX'
       >
         <Link state={{mountain}} to="/mountain">
           <p className="mntn-name">{mountain.name}</p>

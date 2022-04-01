@@ -14,17 +14,18 @@ const CountryDetails = (props) => {
 
   return(
     <>
-      <main>
-        <h1>Country details</h1>
-        <div className="mountain-dets">
-          <p>This is {country.name}</p>
+      <main className="mountain-dets country-main">
+      <div className="frame"> 
+        <h1 className="h1-country">Country details</h1>
+        <div>
+          <p className="any-p-tag">This is {country.name}</p>
           <img className="country-dets-img" src={country.flag} alt="" />
-          <p>Capital: {country.capital} </p>
-          <p>Region: {country.region} </p>
+          <p className="any-p-tag">Capital: {country.capital} </p>
+          <p className="any-p-tag">Region: {country.region} </p>
+        <h1>Mountains:</h1>
         </div>
         {mountains.length ?
-        <div>
-          <h1>Mountains:</h1>
+        <div className="country-dets">
           {mountains.map(mountain =>
             <Mountain 
             key={mountain._id}
@@ -38,6 +39,7 @@ const CountryDetails = (props) => {
           <h1>No Mountain Data</h1>
         </div>
         }
+        </div>
       </main>
     </>
   )
