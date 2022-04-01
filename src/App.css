@@ -110,7 +110,7 @@ a:hover{
   height: 200px;
   margin-bottom: 3%;
   border: 1px solid black;
-  background-image:url('https://picsum.photos/id/1018/320/200');
+  /* background-image:url('https://picsum.photos/id/1018/320/200') */
   /* margin-left: 15px; */
   
 }
@@ -151,11 +151,17 @@ a:hover{
 .country-dets-img{
   height: 150px;
   border: 2px solid black;
+
 }
+
+.cloud-pic {
+  height: 200px;
+}
+
+
 
 .mountain-dets{
   text-align: center;
-  
 }
 
 .user-card{
