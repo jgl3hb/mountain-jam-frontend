@@ -31,7 +31,7 @@ Entity Relationship Document
 
 Wireframe
 
-<img src="https://whimsical.com/mountain-jam-QPSdk91kB6eoNP3HbTv47B"  width="720" height="480">
+<img src="https://i.imgur.com/x5PweOr.png"  width="720" height="480">
 
 Ice Box:
 - Implement an API that displays airports closest to a mountain
