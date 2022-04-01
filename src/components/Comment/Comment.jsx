@@ -33,7 +33,7 @@ function CreateComment(props) {
           ref={formElement}
           autoComplete="off"
           method="POST">
-            <label htmlFor="user-comments">Share your expreience here:</label>
+            <label htmlFor="user-comments">Share your experience here:</label>
           <br />
             <textarea 
             name="comment" 
