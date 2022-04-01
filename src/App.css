@@ -233,7 +233,7 @@ button{
 
 button:hover{
   background-color: rgb(49, 129, 79);
-  
+
 }
 
 .countries-main{
@@ -428,6 +428,31 @@ label{
   align-items: center;
 }
 
+.add-mountain{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapersmug.com%2Flarge%2Ffb6f49%2Fsunset-horizon-mountains-valley.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+input{
+  margin-top: 15px;
+  height: 25px;
+}
+
+#photo-upload{
+  font-size: large;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(49, 129, 79);
+  background-color: #ffffffdb;
+  margin-bottom: 30px;
+  font-family: 'Raleway', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
 
 

@@ -34,15 +34,20 @@ function AddMountain(props) {
 
   return (
     <>
-      <main className="mountain-dets country-main">
+      <main className="add-mountain mountain-dets country-main">
         <h1 className="h1-country">Add mountain</h1>
-        <form autoComplete="off" ref={formElement} onSubmit={handleSubmit}>
+        <form 
+        className="frame" 
+        autoComplete="off" 
+        ref={formElement} 
+        onSubmit={handleSubmit}>
         <div>
         <label htmlFor="name-input">
 					Mountain's Name (required)
 				</label>
         <br />
         <input 
+        className="input"
           type="text"
           id="name-input"
           name="name"
@@ -58,6 +63,7 @@ function AddMountain(props) {
 				</label>
         <br />
         <input 
+        className="input"
           type="number"
           id="elevation-input"
           name="elevation"
@@ -73,6 +79,7 @@ function AddMountain(props) {
 				</label>
         <br />
         <input 
+        className="input"
           type="text"
           id="countries-input"
           name="countries"
@@ -85,9 +92,11 @@ function AddMountain(props) {
 					<label htmlFor="photo-upload" className="form-label">
 						Upload Photo
 					</label>
+          <br />
 					<input
+          className="input"
 						type="file"
-						className="form-control"
+						// className="form-control"
 						id="photo-upload"
 						name="photo"
 						onChange={handleChangePhoto}
@@ -96,7 +105,7 @@ function AddMountain(props) {
         <br />
 					<button
 						type="submit"
-						className="add-mountain"
+						className="create-mtn-btn"
             disabled={!validForm}
 					>
 						Add Mountain
