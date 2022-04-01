@@ -34,8 +34,8 @@ function AddMountain(props) {
 
   return (
     <>
-      <main>
-        <h3>Add mountain</h3>
+      <main className="mountain-dets country-main">
+        <h1 className="h1-country">Add mountain</h1>
         <form autoComplete="off" ref={formElement} onSubmit={handleSubmit}>
         <div>
         <label htmlFor="name-input">

@@ -195,11 +195,45 @@ li.nav-links{
 }
 
 .mountain-dets-main{
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjooinn.com%2Fimages%2Ftwo-man-hiking-on-snow-mountain.jpg&f=1&nofb=1');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  font-size: 22px;
+}
+
+#user-comments{
+  margin-top: 20px;
+  width: 35vh;
+  height: 10vh;
+  text-align: left;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#date-input{
+  width: 36vh;
+  height: 3vh;
+  margin-top: 20px;
+}
+
+button{
+  margin-top: 20px;
+  font-size: large;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(49, 129, 79);
+  background-color: #ffffffdb;
+  margin-bottom: 30px;
+}
+
+button:hover{
+  background-color: rgb(49, 129, 79);
+  
 }
 
 .countries-main{
@@ -246,6 +280,10 @@ li.nav-links{
   background-position: 50%;
 }
 
+label{
+  text-align: center;
+}
+
 .flag-text{
   background-color: rgba(255, 255, 255, 1);
   width: fit-content;
@@ -281,21 +319,33 @@ li.nav-links{
 }
 
 .prof-dets{
-  margin-top: 5px;
+  margin-top: 5%;
 }
 
-.all-users-main{
-  height: 100vh;
+.my-profile-main{
+  height: 100%;
+  min-height: 100vh;
   background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjooinn.com%2Fimages%2Ftwo-man-hiking-on-snow-mountain.jpg&f=1&nofb=1');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+}
+
+.all-users-main{
+  height:auto;
+  min-height: 100vh;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjooinn.com%2Fimages%2Ftwo-man-hiking-on-snow-mountain.jpg&f=1&nofb=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .frame{
   border-radius: 5px;
   padding: 1%;
-  background-color: #f6f8f971;
+  background-color: #f6fcffae;
   text-align: center;
 }
 
@@ -369,6 +419,13 @@ li.nav-links{
   background-color: rgb(49, 129, 79);
   color: #ffffff;
   pointer-events: fill;
+}
+
+#add-comment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
