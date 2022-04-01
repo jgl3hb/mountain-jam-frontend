@@ -23,10 +23,11 @@
   list-style-type: none;
   box-shadow: 1px 1px 6px black;
   font-size: 18px;
+  height: 70px;
 }
 
 main{
-  margin-top: 8vh;
+  margin-top: 7vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,15 +45,9 @@ main{
 
 #welcome{
   margin: 0 1vh 0 1vh;
-}
-
-
-header{
-  
-}
-
-li{
-  height: 5%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 
 ul{
@@ -60,7 +55,7 @@ ul{
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  
+  margin: 0;
 }
 
 #quote{
@@ -74,21 +69,38 @@ ul{
 }
 
 a{
-  margin-right: 15px;
-  height: 100%;
   text-decoration: none;
   color: rgb(0, 0, 0);
+  transition: 0.2s;
 }
 
-a:hover{
-  text-shadow: 1px 1px 3px rgb(70, 182, 197);
-  color:rgb(0, 0, 0);
+li.nav-links{
+  display:flex;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  transition: 0.2s;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 25px;
+  font-family: 'Raleway', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
+.nav-links:hover {
+  background-color: rgb(225, 228, 230);
+}
 
 #left-nav{
   display: flex;
   flex-direction: row;
+  height: 100%;
+}
+.nav-right{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  text-align: center;
 }
 
 .App-link {
