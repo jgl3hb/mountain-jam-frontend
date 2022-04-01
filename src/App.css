@@ -26,6 +26,14 @@
   height: 70px;
 }
 
+h1{
+  font-family: 'Raleway','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.any-text{
+  font-size:x-large;
+}
+
 main{
   margin-top: 7vh;
   display: flex;
@@ -173,7 +181,7 @@ li.nav-links{
 }
 
 .user-card{
-  flex: 0 0 33.333333%;
+  flex: 0 0 100%;
   max-width: 40%;
   min-width: 20vh;
   margin-left: 15px;
@@ -193,8 +201,13 @@ li.nav-links{
   align-items: center;
 }
 
+.profile-card-text:hover{
+  color: #61dafb;
+}
+
 .change-pass{
   display: flex;
+  justify-content: center;
   flex-direction: row;
   margin-left: 30px;
   width: 100%;
@@ -204,12 +217,28 @@ li.nav-links{
   font-size: large;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid rgb(178, 178, 18);
+  border: 1px solid rgb(223, 129, 41);
 }
 
 #passw:hover{
-  background-color: rgb(178, 178, 18);
-  
+  background-color: rgb(223, 129, 41);
+  color: #ffffff;
+
+}
+
+.create-mtn-btn{
+  font-size: large;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(49, 129, 79);
+  background-color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.create-mtn-btn:hover{
+  background-color: rgb(49, 129, 79);
+  color: #ffffff;
+  pointer-events: fill;
 }
 
 

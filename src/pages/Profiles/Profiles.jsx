@@ -14,9 +14,9 @@ const Profiles = (props) => {
 
   let profIdx = profiles.map((profile,idx) =>{
     return(
-      <div className='user-card'>
+      <div className='animate__animated animate__bounceIn user-card'>
     <p key={profile._id} onClick={()=> props.handleClick(profile)}>
-    <Link to="/profile">Hello! {profile.name}</Link></p>
+    <Link className='profile-card-text' to="/profile">Visit {profile.name}'s Page</Link></p>
     </div>
     )
   }
