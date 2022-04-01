@@ -14,7 +14,7 @@ const NavBar = ({ user, profile, handleLogout, handleClick }) => {
             </div>
             <div>
               <Link to="/">
-                <img id='jam-logo' src="../Logo test.PNG" alt="" />
+                <img id='jam-logo' src="../Logo test-modified1.png" alt="" />
               </Link>
             </div>
             <div className='nav-right'>

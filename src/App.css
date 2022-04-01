@@ -13,7 +13,8 @@
   top: 0;
   z-index: 9999;
   width: 100%;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, .5);
+  background-image: linear-gradient(to right, #ebebeb00 , #e8e8e865, #ffffff);
   text-decoration: none;
   display:flex;
   justify-content: space-between;
@@ -40,6 +41,7 @@ main{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0;
 }
 
 .main-center{
@@ -71,7 +73,7 @@ ul{
 #quote{
   width: 50%;
   border: 1px solid rgba(139, 139, 139);
-  margin-top: 7%;
+  margin-top: 11%;
   padding: 40px;
   border-radius: 2px;
   background-color: rgba(255, 255, 255, .8);
@@ -137,6 +139,10 @@ li.nav-links{
   
 }
 
+.countries-main{
+  margin-top: 4%;
+}
+
 .each-card.country{
   display: flex;
   align-items: flex-end;
@@ -186,6 +192,10 @@ li.nav-links{
   text-align: center;
 }
 
+.all-users-main{
+  height: 100vh;
+}
+
 .user-card{
   flex: 0 0 100%;
   max-width: 40%;
@@ -207,10 +217,10 @@ li.nav-links{
   text-align: center;
   align-items: center;
 }
+
 .profile-card-text{
   color:#ffffff;
   text-shadow: 2px 3px 4px black;
-
 }
 
 

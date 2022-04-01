@@ -26,7 +26,8 @@ useEffect(()=> {
   
     return (
       <>
-      <main>
+      <main >
+      <h1>Mountain List</h1>
       <form onSubmit={handleSubmitSearch}>
         <input 
         onChange={handleSearch} 
@@ -37,7 +38,6 @@ useEffect(()=> {
         aria-label='search'
         />
       </form>
-      <h1>Mountain List</h1>
       <div className='cards'>
       {search.query ? 
         <>
