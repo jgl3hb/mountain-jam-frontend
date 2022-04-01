@@ -49,6 +49,7 @@ const ProfileDetails = (props) => {
           {props.userProfile[0]._id === props.user.profile ? 
             <>
             <MyProfile />
+            <div className='change-pass'><Link id="passw" to="/changePassword">Change Password</Link></div>
             </>
             :
             <></>
@@ -109,6 +110,7 @@ const ProfileDetails = (props) => {
           {props.profile._id === props.user.profile ? 
             <>
             <MyProfile />
+            <div className='change-pass'><Link id="passw" to="/changePassword">Change Password</Link></div>
             </>
             :
             <></>

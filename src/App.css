@@ -48,6 +48,8 @@ main{
   display:flex;
   align-items: center;
   justify-content: center;
+  font-size: 120%;
+  font-family: 'Raleway', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 ul{
@@ -83,7 +85,7 @@ li.nav-links{
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 25px;
+  font-size: 120%;
   font-family: 'Raleway', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
@@ -189,6 +191,25 @@ li.nav-links{
   justify-content: space-around;
   text-align: center;
   align-items: center;
+}
+
+.change-pass{
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+  width: 100%;
+}
+
+#passw{
+  font-size: large;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(178, 178, 18);
+}
+
+#passw:hover{
+  background-color: rgb(178, 178, 18);
+  
 }
 
 

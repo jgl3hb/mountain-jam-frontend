@@ -17,13 +17,10 @@ const NavBar = ({ user, profile, handleLogout, handleClick }) => {
                 <img id='jam-logo' src="../Logo test.PNG" alt="" />
               </Link>
             </div>
-            {/* <ul> */}
             <div className='nav-right'>
               <li className='nav-links' onClick={()=> handleClick(profile, user)}><Link to="/myprofile" profile={profile} user={user}>My Profile</Link></li>
               <li className='nav-links'><Link to="/profiles">Profiles</Link></li>
               <li className='nav-links'><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
-              <li className='nav-links'><Link to="/changePassword">Change Password</Link></li>
-            {/* </ul> */}
             </div>
           </nav>
           </header>
