@@ -1,7 +1,7 @@
 ![](https://i.imgur.com/QZ4Skmp.png)
 
-Visit our Site: 
-https://mountain-jam.herokuapp.com/
+Visit our Site: [Mountain Jam](https://mountain-jam.herokuapp.com/)
+
 
 Technologies used:
 
