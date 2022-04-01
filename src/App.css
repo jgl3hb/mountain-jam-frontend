@@ -235,8 +235,6 @@ li.nav-links{
   height: 200px;
 }
 
-
-
 .mountain-dets{
   text-align: center;
 }
@@ -251,6 +249,13 @@ li.nav-links{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.frame{
+  border-radius: 5px;
+  padding: 1%;
+  background-color: #f6f8f971;
+  text-align: center;
 }
 
 .user-card{

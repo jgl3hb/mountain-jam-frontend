@@ -59,9 +59,10 @@ const ProfileDetails = (props) => {
       </>
       :
       <>
+      <div className="frame">
       {props.profile._id === props.user.profile ? 
         <>
-          My Page
+          <p className="any-p-tag">My Page</p>
           <div className="any-text">These are the mountains that I havent visited yet: </div>
         </>
           :
@@ -117,6 +118,7 @@ const ProfileDetails = (props) => {
             :
             <></>
           }
+          </div>
       </>
     }
     </main>
