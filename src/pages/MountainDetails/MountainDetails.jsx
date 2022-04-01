@@ -13,10 +13,6 @@ const MountainDetails = (props) => {
 
   const [userProfile, setUserProfile] = useState(props.userProfile[0])
   
-  console.log('profile', userProfile)
-  console.log(mountain);
-  
-
   return(
     mountain.name ?
     <>
@@ -54,25 +50,32 @@ const MountainDetails = (props) => {
         <CreateComment  
         handleCreateComment={props.handleCreateComment} 
         mountain={mountain}/>
-        <Link
-          to='/editmountain'
-          state={{mountain}}
-        >
-          <br />
-          <button>
-            Edit Mountain
-          </button>
-        </Link>
-        <Link
-          to='/mountains'
-          state={{mountain}}
-        >
-          <br />
-          <button
-            onClick={()=> props.handleDeleteMountain(mountain._id)}>
-              Delete Mountain
-          </button>
-        </Link>
+        {(userProfile._id === mountain.owner) ?
+        <>
+          <Link
+            to='/editmountain'
+            state={{mountain}}
+          >
+            <br />
+            <button>
+              Edit Mountain
+            </button>
+          </Link>
+          <Link
+            to='/mountains'
+            state={{mountain}}
+          >
+            <br />
+            <button
+              onClick={()=> props.handleDeleteMountain(mountain._id)}>
+                Delete Mountain
+            </button>
+          </Link>
+        </>
+        :
+        <>
+        </>
+        }
     </main>
     </>
     :
