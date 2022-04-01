@@ -119,6 +119,5 @@ const ProfileDetails = (props) => {
     </>
   )
 }
-console.log("Is this wirking?")
 
 export default ProfileDetails;

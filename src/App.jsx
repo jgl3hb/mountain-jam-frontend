@@ -30,10 +30,6 @@ const App = () => {
   const [search, setSearch] = useState({query: ''})
   const [searchResults, setSearchResults] = useState({mountains: []})
 
-  // console.log("App JSX Profile", profile)
-  // console.log("App JSX userProfile", userProfile)
-  // console.log("App JSX User", user)
-
   useEffect(()=> {
     countryService.getAllCountries()
     .then(countries => setCountries(countries))

@@ -41,9 +41,6 @@ function update(mountain) {
 }
 
 function createComment(mountain, comment) {
-  for(let pair of comment.entries()){
-    console.log(pair[0], pair[1])
-  }
   return fetch(`${BASE_URL}/${mountain._id}/comment`, {
     method: 'POST',
     headers: {
