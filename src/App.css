@@ -146,7 +146,7 @@ li.nav-links{
   flex-direction: column;
   align-items: flex-end;
   max-width: 15%;
-  min-width: 20vh;
+  min-width: 270px;
   height: 270px;
   margin-bottom: 3%;
   border: 2px solid rgb(117, 114, 114);
@@ -169,7 +169,7 @@ li.nav-links{
 
 .mntn-name{
   color: #00A7DD;
-  padding-top: 70%;
+  padding-top: 73%;
   font-size: larger;
 }
 
