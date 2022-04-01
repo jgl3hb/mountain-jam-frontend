@@ -1,10 +1,6 @@
 import { useState, useRef, useEffect } from "react"
-import { Link, useLocation } from 'react-router-dom'
-
-// location.state.comment
 
 function CreateComment(props) {
-  const location = useLocation()
   const [formData, setFormData] = useState('')
   const [validForm, setValidForm] = useState(true)
   const formElement = useRef()
@@ -26,10 +22,6 @@ function CreateComment(props) {
 		commentFormData.append('comment', formData.comment)
 		props.handleCreateComment(mountain, commentFormData)
     setFormData('')
-	}
-
-	const handleChangePhoto = (evt) => {
-		setFormData({...formData, photo: evt.target.files[0]})
 	}
 
   return (

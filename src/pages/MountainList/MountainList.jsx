@@ -1,6 +1,4 @@
 import Mountain from '../../components/Mountain/Mountain'
-import { Link } from 'react-router-dom'
-import MountainDetails from '../MountainDetails/MountainDetails'
 import { useState, useEffect } from 'react'
 
 const MountainList = (props) => {
@@ -21,6 +19,7 @@ useEffect(()=> {
     evt.preventDefault()
     props.handleSubmitSearch()
   }
+
   useEffect (() => {
     setMountains(props.mountains)
   }, [])
@@ -68,6 +67,5 @@ useEffect(()=> {
     )
 
 }
-
 
 export default MountainList;

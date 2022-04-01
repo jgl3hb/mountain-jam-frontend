@@ -32,7 +32,6 @@ function AddMountain(props) {
 		setFormData({...formData, photo: evt.target.files[0]})
 	}
 
-
   return (
     <>
       <main>
@@ -40,47 +39,47 @@ function AddMountain(props) {
         <form autoComplete="off" ref={formElement} onSubmit={handleSubmit}>
         <div>
         <label htmlFor="name-input">
-						Mountain's Name (required)
+					Mountain's Name (required)
 				</label>
         <br />
         <input 
-						type="text"
-						id="name-input"
-						name="name"
-            value={formData.name}
-            onChange={handleChange}
-						required
-					/>
+          type="text"
+          id="name-input"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+				/>
         </div>
         <br />
         <div>
         <label htmlFor="elevation-input">
-						Mountain's Elevation (required)
+					Mountain's Elevation (required)
 				</label>
         <br />
         <input 
-						type="number"
-						id="elevation-input"
-						name="elevation"
-            value={formData.elevation}
-            onChange={handleChange}
-						required
-					/>
+          type="number"
+          id="elevation-input"
+          name="elevation"
+          value={formData.elevation}
+          onChange={handleChange}
+          required
+        />
         </div>
         <br />
         <div>
         <label htmlFor="countries-input">
-						Country (required)
+          Country (required)
 				</label>
         <br />
         <input 
-						type="text"
-						id="countries-input"
-						name="countries"
-            value={formData.countries}
-            onChange={handleChange}
-						required
-					/>
+          type="text"
+          id="countries-input"
+          name="countries"
+          value={formData.countries}
+          onChange={handleChange}
+          required
+        />
         </div>
         <div className="form-group mb-4">
 					<label htmlFor="photo-upload" className="form-label">
@@ -103,9 +102,7 @@ function AddMountain(props) {
 						Add Mountain
 					</button>
         </form>
-
       </main>
-    
     </>
   )
 }

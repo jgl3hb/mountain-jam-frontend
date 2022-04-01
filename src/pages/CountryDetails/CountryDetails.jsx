@@ -1,4 +1,4 @@
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import Mountain from "../../components/Mountain/Mountain";
 
