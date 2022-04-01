@@ -1,9 +1,6 @@
 import { useLocation, Link} from "react-router-dom";
-import MountainList from "../MountainList/MountainList";
 import CreateComment from "../../components/Comment/Comment";
-import * as profileService from"../../services/profileService.js"
-import { useState, useEffect } from 'react'
-import { update } from "../../services/mountainService";
+import { useState } from 'react'
 
 
 
@@ -82,6 +79,5 @@ const MountainDetails = (props) => {
     <h1>No Mountain</h1>
   )
 }
-
 
 export default MountainDetails;

@@ -1,6 +1,4 @@
 import Country from '../../components/Country/Country'
-import { Link } from 'react-router-dom'
-import CountryDetails from '../CountryDetails/CountryDetails'
 
 const CountryList = (props) => {
 const countries = props.countries 

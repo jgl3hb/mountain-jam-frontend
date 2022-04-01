@@ -39,6 +39,4 @@ const NavBar = ({ user, profile, handleLogout, handleClick }) => {
   )
 } 
     
-  
-
 export default NavBar

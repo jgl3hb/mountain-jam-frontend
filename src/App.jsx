@@ -9,11 +9,9 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import MountainList from './pages/MountainList/MountainList'
 import ProfileDetails from './pages/Profile/Profile'
-import Mountain from './components/Mountain/Mountain'
 import * as mountainService from './services/mountainService'
 import * as profileService from './services/profileService'
 import MountainDetails from './pages/MountainDetails/MountainDetails'
-import MyProfile from './components/MyProfile/MyProfile'
 import AddMountain from './pages/AddMountain/AddMountain'
 import EditMountain from './pages/EditMountain/EditMountain'
 import CountryList from './pages/CountryList/CountryList'
@@ -27,8 +25,6 @@ const App = () => {
   const [mountains, setMountains] = useState([])
   const [userProfile, setUserProfile] = useState(null)
   const [countries, setCountries] = useState([])
-  const [search, setSearch] = useState({query: ''})
-  const [searchResults, setSearchResults] = useState({mountains: []})
 
   useEffect(()=> {
     countryService.getAllCountries()

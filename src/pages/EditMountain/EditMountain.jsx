@@ -79,7 +79,7 @@ function EditMountain(props) {
 						name="elevation"
             value={formData.elevation}
             onChange={handleChange}
-						/>
+					/>
 				</div>
 				<div className="form-group mb-4">
 					<br />
@@ -93,7 +93,7 @@ function EditMountain(props) {
 						id="photo-upload"
 						name="photo"
 						onChange={handleChangePhoto}
-						/>
+					/>
 				</div>
 				<div className="d-grid mb-3">
 					<br />
