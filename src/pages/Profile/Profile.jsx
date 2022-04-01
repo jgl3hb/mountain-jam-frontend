@@ -11,7 +11,7 @@ const ProfileDetails = (props) => {
     <h1>Profile Details</h1>
     {props.userProfile ? 
       <>
-      <div>Hey {props.userProfile[0].name},</div>
+      <div className="any-text">Hey {props.userProfile[0].name},</div>
       <div className="any-text">These are the mountains that you havent visited yet: </div>
       <div className='profile-cards'>
             {props.userProfile[0].toVisit?.length? 
@@ -49,6 +49,7 @@ const ProfileDetails = (props) => {
           {props.userProfile[0]._id === props.user.profile ? 
             <>
             <MyProfile />
+            <div className='change-pass'><Link id="passw" to="/changePassword">Change Password</Link></div>
             </>
             :
             <></>
@@ -109,6 +110,7 @@ const ProfileDetails = (props) => {
           {props.profile._id === props.user.profile ? 
             <>
             <MyProfile />
+            <div className='change-pass'><Link id="passw" to="/changePassword">Change Password</Link></div>
             </>
             :
             <></>

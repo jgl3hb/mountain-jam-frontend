@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 const MyProfile = (props) => {
   return (
     <>
-      <Link
+    <div className='change-pass'>
+      <Link className="create-mtn-btn"
         to='/addmountain'
       >
-        <button>
           Create a New Mountain
-        </button>
       </Link>
+      </div>
     </>
   )
 }
