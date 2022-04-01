@@ -7,7 +7,7 @@ const MyProfile = (props) => {
         to='/addmountain'
       >
         <button>
-          Add Mountain
+          Create a New Mountain
         </button>
       </Link>
     </>

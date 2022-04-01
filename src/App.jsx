@@ -16,7 +16,9 @@ import MountainDetails from './pages/MountainDetails/MountainDetails'
 import MyProfile from './components/MyProfile/MyProfile'
 import AddMountain from './pages/AddMountain/AddMountain'
 import EditMountain from './pages/EditMountain/EditMountain'
-import SearchBar from './components/SearchBar/SearchBar'
+import CountryList from './pages/CountryList/CountryList'
+import * as countryService from './services/countryService'
+import CountryDetails from './pages/CountryDetails/CountryDetails'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -24,10 +26,22 @@ const App = () => {
   const navigate = useNavigate()
   const [mountains, setMountains] = useState([])
   const [userProfile, setUserProfile] = useState(null)
+  const [countries, setCountries] = useState([])
+  const [search, setSearch] = useState({query: ''})
+  const [searchResults, setSearchResults] = useState({mountains: []})
+
+  // console.log("App JSX Profile", profile)
+  // console.log("App JSX userProfile", userProfile)
+  // console.log("App JSX User", user)
+
+  useEffect(()=> {
+    countryService.getAllCountries()
+    .then(countries => setCountries(countries))
+  }, [])
 
   useEffect(()=> {
     mountainService.getAllMountains()
-    .then(mountains => setMountains(mountains.slice(0, 18)))
+    .then(mountains => setMountains(mountains))
   }, [])
 
   useEffect(()=> {
@@ -38,10 +52,6 @@ const App = () => {
     }) 
   }, [])
 
-  useEffect(()=> {
-    console.log('myprofile', userProfile)
-  },[userProfile])
-
   const handleAddMountain = async newMountainData => {
     const newMountain = await mountainService.create(newMountainData)
     setMountains([...mountains, newMountain])
@@ -49,8 +59,8 @@ const App = () => {
   }
 
   const handleCreateComment = async (mountain, newCommentData) => {
-    console.log('commentData', newCommentData.comment)
-    const newComment = await mountainService.createComment(mountain, newCommentData)
+    const updatedMountain = await mountainService.createComment(mountain, newCommentData)
+    setMountains(mountains.map(m => m._id === updatedMountain._id ? updatedMountain : m))
   }
 
   const handleDeleteMountain = id => {
@@ -66,12 +76,6 @@ const App = () => {
       navigate('/mountains')
     })
   }
-
-  const searchMountain = searchString => {
-    mountainService.search(searchString)
-    .then(mountains => setMountains(mountains))
-  }
-
   
   const handleLogout = () => {
     authService.logout()
@@ -85,6 +89,13 @@ const App = () => {
 
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
+  }
+
+  const addPeakToCollection = peak => {
+    profileService.addPeak(peak)
+    .then(updatedProfile => {
+      setProfile(updatedProfile)
+    })
   }
 
   return (
@@ -102,25 +113,52 @@ const App = () => {
         <Route path="/addmountain" element={<AddMountain handleAddMountain={handleAddMountain} />} />
 
         <Route path='/mountains'
-            element={ 
-              user ?
-              <>
-                <MountainList
-                  handleDeleteMountain={handleDeleteMountain}
-                  mountains={mountains}
-                  user={user} 
-                />
-                <SearchBar searchMountain={searchMountain} />
-              </>
-              :
-              <Navigate to='/login' />
-            }
-          />
+          element={ 
+            user ?
+            <>
+              <MountainList
+                handleDeleteMountain={handleDeleteMountain}
+                mountains={mountains}
+                user={user} 
+              />
+            </>
+            :
+            <Navigate to='/login' />
+          }
+        />
+        <Route path='/countries'
+          element={
+            <>
+              <CountryList 
+              countries={countries} 
+              user={user}
+              mountains={mountains}
+              handleDeleteMountain={handleDeleteMountain}
+              />
+            </>
+          }
+        />
+
+        <Route path='/country'
+          element={
+            <>
+              <CountryDetails
+                user={user}
+                mountains={mountains}
+                handleDeleteMountain={handleDeleteMountain}              
+              />
+            </>
+          } />
 
         <Route path="/editmountain" element={<EditMountain handleUpdateMountain={handleUpdateMountain} />} />
 
         <Route path="/mountain" element={<MountainDetails
-        handleDeleteMountain={handleDeleteMountain} handleCreateComment={handleCreateComment} />} />
+        addPeakToCollection={addPeakToCollection}
+        handleDeleteMountain={handleDeleteMountain} 
+        handleCreateComment={handleCreateComment} 
+        mountains={mountains}
+        userProfile={userProfile}
+        />} />
         
         <Route
           path="/signup"

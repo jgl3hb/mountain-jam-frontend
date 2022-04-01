@@ -1,9 +1,11 @@
 import { useState, useRef, useEffect } from "react"
 import { Link, useLocation } from 'react-router-dom'
 
+// location.state.comment
+
 function CreateComment(props) {
   const location = useLocation()
-  const [formData, setFormData] = useState(location.state.comment)
+  const [formData, setFormData] = useState('')
   const [validForm, setValidForm] = useState(true)
   const formElement = useRef()
 
@@ -22,8 +24,8 @@ function CreateComment(props) {
 		commentFormData.append('photo', formData.photo)
 		commentFormData.append('visitDate', formData.date)
 		commentFormData.append('comment', formData.comment)
-    console.log('formData', commentFormData)
 		props.handleCreateComment(mountain, commentFormData)
+    setFormData('')
 	}
 
 	const handleChangePhoto = (evt) => {
@@ -39,7 +41,7 @@ function CreateComment(props) {
           ref={formElement}
           autoComplete="off"
           method="POST">
-            <label for="user-comments">Share your expreience here:</label>
+            <label htmlFor="user-comments">Share your expreience here:</label>
           <br />
             <textarea 
             name="comment" 
@@ -48,7 +50,7 @@ function CreateComment(props) {
             required
             ></textarea>
           <br />
-            <label for="date">Date of your visit:</label>
+            <label htmlFor="date">Date of your visit:</label>
             <br />
             <input 
             type='date'
@@ -58,7 +60,7 @@ function CreateComment(props) {
             />
           <br />
             <button 
-            class="add-comment" 
+            className="add-comment" 
             type="submit"
             disabled={!validForm}
             >Add Comment
