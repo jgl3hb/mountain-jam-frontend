@@ -20,10 +20,19 @@ Technologies used:
 ![Cloudinary](https://img.shields.io/badge/-Cloudinary-white?style=for-the-badge&logo=cloudinary&logoColor=black)
 
 
-Objective:
+**About this website**
+
 To make a React application that implements an API with a list of mountains in the world. We'll be able to keep track of mountains we have climbed or want to climb in the future. 
 
 We'll also be able to make notes about our hikes for future reference. 
+
+&nbsp;
+
+**How We built this website**
+
+Hello everyone! We are 3 classmates and developers and our names are Jeff, Austin and Mike. We like mountains and hiking. When all 3 of us were assined to one project, Jeff proposed the idea of building an app, where you can track the mountains that you've visited, share details and experience with others. This project took us 7 days to build and we've learned a lot about React and it's components and hooks. 
+
+We had separate roles while we were building this app. Jeff's main responsibility was GitHub. Austin was taking care of database and Mike was the CSS guy.
 
 Entity Relationship Document
 
@@ -41,11 +50,3 @@ Ice Box:
 - Add an activity feed to view recent updates
 - Implement Google Maps API to display peak locations
 - Allow users to create mountains/comments not viewable to others
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
