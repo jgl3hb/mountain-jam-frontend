@@ -26,22 +26,16 @@ To make a React application that implements an API with a list of mountains in t
 
 We'll also be able to make notes about our hikes for future reference. 
 
-&nbsp;
+Visit our Trello Board: [Trello Link](https://trello.com/b/xEPMus5M/mountain-jam)
 
-**How We built this website**
-
-Hello everyone! We are 3 classmates and developers and our names are Jeff, Austin and Mike. We like mountains and hiking. When all 3 of us were assined to one project, Jeff proposed the idea of building an app, where you can track the mountains that you've visited, share details and experience with others. This project took us 7 days to build and we've learned a lot about React and it's components and hooks. 
-
-We had separate roles while we were building this app. Jeff's main responsibility was GitHub. Austin was taking care of database and Mike was the CSS guy.
-
-Entity Relationship Document
-
-<img src="https://trello.com/1/cards/623a58e086fa6585d3352e4b/attachments/623a58e086fa6585d3352e5e/download/Capture.PNG"  width="720" height="480">
+Check out our Wireframe:[Wireframe](https://whimsical.com/mountain-jam-QPSdk91kB6eoNP3HbTv47B)
 
 
-Wireframe
+<img src="https://i.imgur.com/CsuDkv8.png"  width="720" height="480">
 
-<img src="https://i.imgur.com/x5PweOr.png"  width="720" height="480">
+<br>  
+<img src="https://i.imgur.com/GIa6Wkf.png"  width="720" height="480">
+
 
 Ice Box:
 - Implement an API that displays airports closest to a mountain
