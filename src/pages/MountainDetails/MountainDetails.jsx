@@ -52,7 +52,7 @@ const MountainDetails = (props) => {
         mountain={mountain}/>
         {(userProfile._id === mountain.owner) ?
         <>
-          <Link class="create-mtn-btn"
+          <Link 
             to='/editmountain'
             state={{mountain}}
             >
@@ -62,7 +62,6 @@ const MountainDetails = (props) => {
             </button>
           </Link>
           <Link
-          class="create-mtn-btn"
             to='/mountains'
             state={{mountain}}
             >

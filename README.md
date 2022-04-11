@@ -20,7 +20,8 @@ Technologies used:
 ![Cloudinary](https://img.shields.io/badge/-Cloudinary-white?style=for-the-badge&logo=cloudinary&logoColor=black)
 
 
-Objective:
+**About this website**
+
 To make a React application that implements an API with a list of mountains in the world. We'll be able to keep track of mountains we have climbed or want to climb in the future. 
 
 We'll also be able to make notes about our hikes for future reference. 
@@ -34,9 +35,6 @@ Check out our Wireframe:[Wireframe](https://whimsical.com/mountain-jam-QPSdk91kB
 
 <br>  
 <img src="https://i.imgur.com/GIa6Wkf.png"  width="720" height="480">
-
-
-
 
 
 Ice Box:
