@@ -25,14 +25,19 @@ To make a React application that implements an API with a list of mountains in t
 
 We'll also be able to make notes about our hikes for future reference. 
 
-Entity Relationship Document
+Visit our Trello Board: [Trello Link](https://trello.com/b/xEPMus5M/mountain-jam)
 
-<img src="https://trello.com/1/cards/623a58e086fa6585d3352e4b/attachments/623a58e086fa6585d3352e5e/download/Capture.PNG"  width="720" height="480">
+Check out our Wireframe:[Wireframe](https://whimsical.com/mountain-jam-QPSdk91kB6eoNP3HbTv47B)
 
 
-Wireframe
+<img src="https://i.imgur.com/CsuDkv8.png"  width="720" height="480">
 
-<img src="https://i.imgur.com/x5PweOr.png"  width="720" height="480">
+<br>  
+<img src="https://i.imgur.com/GIa6Wkf.png"  width="720" height="480">
+
+
+
+
 
 Ice Box:
 - Implement an API that displays airports closest to a mountain
@@ -41,11 +46,3 @@ Ice Box:
 - Add an activity feed to view recent updates
 - Implement Google Maps API to display peak locations
 - Allow users to create mountains/comments not viewable to others
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
